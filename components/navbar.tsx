@@ -11,7 +11,7 @@ const Navbar = () => {
 	return (
 		<div className="sticky top-0 h-screen">
 			<div className="min-w-[230px] h-full py-4">
-				<div className="w-full h-full p-2.5 bg-gray-500 rounded-[32px]">
+				<div className="w-full h-full p-2.5 bg-neutral-500 rounded-[32px]">
 					{/* Logo */}
 					<div className="h-max flex justify-center mx-auto pt-6 space-x-4">
 						<Image src={SheinLogo} alt="" className="w-10 h-10 aspect-square" />
