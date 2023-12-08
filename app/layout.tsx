@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<div className="w-[15%] grow ml-4">
 					<Navbar />
 				</div>
-				<div className="w-full h-real grow">{children}</div>
+				<div className="w-full h-real grow m-4">{children}</div>
 			</body>
 		</html>
 	)
