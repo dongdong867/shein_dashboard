@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en" className={`${outfit.variable}`}>
-			<body className="w-full h-full">
-				<div className="flex w-full h-full max-sm:hidden">
-					<div className="w-[15%] grow ml-4">
+			<body className="w-screen h-full overflow-hidden">
+				<div className="flex w-full h-full p-4 space-x-4 max-sm:hidden">
+					<div className="w-[15%] max-w-[180px] h-full">
 						<Navbar />
 					</div>
-					<div className="w-full h-real grow m-4">{children}</div>
+					<div className="w-[80%] h-real grow">{children}</div>
 				</div>
 				<div className="h-screen flex flex-col justify-center place-items-center space-y-4">
 					<div className="flex place-items-center space-x-4 sm:hidden">
