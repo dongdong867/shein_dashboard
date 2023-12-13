@@ -21,7 +21,7 @@ const Navbar = () => {
 
 					{/* Link to Storage Management System */}
 					<div className="flex flex-col space-y-3 text-white">
-						<Link href={"/"}>
+						<Link href={"/storage"}>
 							<Button variant={"ghost"} asChild className="h-max flex justify-between rounded-2xl">
 								<div>
 									<div className="flex place-items-center space-x-3 max-lg:hidden">
