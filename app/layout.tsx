@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
+// font
 import { Outfit } from "next/font/google"
+// css
 import "./globals.css"
+// components
 import Navbar from "@/components/navbar"
 import { Separator } from "@/components/ui/separator"
 
@@ -16,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang="en" className={`${outfit.variable}`}>
 			<body className="w-screen h-full overflow-x-hidden">
 				<div className="flex w-full h-full p-4 space-x-4 max-sm:hidden">
-					<div className="relative w-[15%] max-w-[180px] grow">
+					<div className="relative w-[15%] max-w-[200px] grow">
 						<div className="sticky top-4 w-full h-[calc(100vh-32px)] bg-neutral-500/90 rounded-[32px]">
 							<Navbar />
 						</div>
