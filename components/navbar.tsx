@@ -10,7 +10,7 @@ import SheinLogo from "/public/shein-logo.png"
 const Navbar = () => {
 	return (
 		<div className="sticky top-0 h-screen">
-			<div className="h-full py-4">
+			<div className="h-full pb-8">
 				<div className="w-full h-full p-2.5 flex flex-col place-items-center bg-neutral-500/90 rounded-[32px]">
 					{/* Logo */}
 					<div className="h-max flex justify-center place-items-center mx-auto pt-6 space-x-2">
