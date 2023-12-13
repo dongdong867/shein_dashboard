@@ -27,11 +27,12 @@ module.exports = {
 				ring: "#020817",
 				good: "#57ca3a",
 				warning: "#eec22c",
+				"warning-100": "#fffce2",
 				background: "#f7f8fa",
 				foreground: "#222",
 				primary: {
 					DEFAULT: "#222",
-					content: "#f7f8fa"
+					foreground: "#f7f8fa"
 				},
 				secondary: {
 					DEFAULT: "#c72b1d",
@@ -39,11 +40,11 @@ module.exports = {
 				},
 				destructive: {
 					DEFAULT: "#ef4444",
-					content: "#f7f8fa"
+					foreground: "#f7f8fa"
 				},
 				accent: {
-					DEFAULT: "#fffce2",
-					content: "#222"
+					DEFAULT: "#222",
+					foreground: "#f7f8fa"
 				},
 				base: {
 					DEFAULT: "#e7e7e7",
