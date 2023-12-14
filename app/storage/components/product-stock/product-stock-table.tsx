@@ -17,12 +17,14 @@ import {
 	flexRender,
 	getCoreRowModel,
 	getFilteredRowModel,
+	getPaginationRowModel,
 	getSortedRowModel,
 	useReactTable
 } from "@tanstack/react-table"
 import { useState } from "react"
 // util
 import { columns } from "./columns"
+import { Button } from "@/components/ui/button"
 
 // TODO: REPLACE FAKE DATA
 const data: ProductStock[] = [
@@ -61,11 +63,31 @@ export const ProductStockTable = () => {
 		getCoreRowModel: getCoreRowModel(),
 		getSortedRowModel: getSortedRowModel(),
 		getFilteredRowModel: getFilteredRowModel(),
+		getPaginationRowModel: getPaginationRowModel(),
 		state: {
 			sorting,
 			columnFilters
 		}
 	})
+
+	const PaginationButton = () => {
+		return (
+			<div className="flex justify-end space-x-2">
+				<Button
+					variant={"outline"}
+					onClick={() => table.previousPage()}
+					disabled={!table.getCanPreviousPage()}
+					className="hover:bg-primary-foreground hover:text-primary"
+				>
+					Previous
+				</Button>
+				<Button onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
+					Next
+				</Button>
+			</div>
+		)
+	}
+
 	return (
 		<div className="w-full h-full p-7 space-y-4 bg-white rounded-[32px]">
 			<div className="flex justify-between place-items-center">
@@ -115,6 +137,7 @@ export const ProductStockTable = () => {
 					</TableBody>
 				</Table>
 			</div>
+			<PaginationButton />
 		</div>
 	)
 }
