@@ -1,6 +1,9 @@
 type FactoryOrder = {
   orderId: string,
-  orderDate: string,
+  factoryId: string,
+  productId: string
+  amount: number
+  percentage: number,
   status: "inline" | "processing" | "shipping",
-  percentage: number
+  orderDate: string,
 }
