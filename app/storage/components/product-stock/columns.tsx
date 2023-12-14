@@ -40,7 +40,7 @@ export const columns: ColumnDef<ProductStock>[] = [
 	{
 		accessorKey: "storageId",
 		header: "倉庫編號",
-		cell: ({ row }) => <div className="lowercase">{row.getValue("storageId")}</div>
+		cell: ({ row }) => <div className="lowercase pl-1">{row.getValue("storageId")}</div>
 	},
 	{
 		accessorKey: "storageName",
@@ -74,6 +74,6 @@ export const columns: ColumnDef<ProductStock>[] = [
 				<span className="pr-2">庫存數量</span>
 			</SortButton>
 		),
-		cell: ({ row }) => <div className="lowercase text-right pr-4">{row.getValue("amount")}</div>
+		cell: ({ row }) => <div className="lowercase text-center">{row.getValue("amount")}</div>
 	}
 ]
