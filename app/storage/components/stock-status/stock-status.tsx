@@ -3,7 +3,7 @@ import StockStatusReloadButton from "./reload-button"
 
 export const StockStatus = () => {
 	return (
-		<div className="w-full h-1/3 min-h-[320px] flex flex-col justify-start place-items-start rounded-[32px] bg-base/90 overflow-y-scroll">
+		<div className="w-full h-max min-h-[320px] flex flex-col justify-start place-items-start rounded-[32px] bg-base/90 overflow-y-scroll">
 			<div className="w-full flex justify-between place-items-center px-7 pt-7">
 				<div className="-space-y-1 font-bold mb-4">
 					<div className="text-2xl">實時倉庫容量概況</div>
