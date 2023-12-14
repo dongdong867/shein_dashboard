@@ -3,7 +3,7 @@ import { ProductStockTable } from "./product-stock-table"
 
 export const ProductStock = () => {
 	return (
-		<div className="w-full h-max min-h-[600px] flex flex-col justify-start place-items-start rounded-[32px] bg-base/90 overflow-hidden">
+		<div className="w-full h-full flex flex-col justify-start place-items-start rounded-[32px] bg-base/90 overflow-hidden">
 			<div className="w-full flex justify-between place-items-center px-7 pt-7">
 				<div className="w-full h-max -space-y-1 font-bold mb-4">
 					<div className="text-2xl">商品庫存查詢</div>
