@@ -1,9 +1,40 @@
 // types
-import { ColumnDef } from "@tanstack/react-table"
+import { Column, ColumnDef, SortDirection } from "@tanstack/react-table"
 // components
 import { Button } from "@/components/ui/button"
 // icons
 import { LuArrowDown01, LuArrowDown10, LuArrowDownUp } from "react-icons/lu"
+
+const getSortingArrowIcon = (isSorted: false | SortDirection) => {
+	return isSorted ? isSorted == "asc" ? <LuArrowDown01 /> : <LuArrowDown10 /> : <LuArrowDownUp />
+}
+
+const sortHandler = (isSorted: false | SortDirection, column: Column<ProductStock, unknown>) => {
+	if (!isSorted) column.toggleSorting(false)
+	else if (isSorted == "asc") column.toggleSorting(true)
+	else column.clearSorting()
+}
+
+const SortButton = ({
+	column,
+	children
+}: {
+	column: Column<ProductStock, unknown>
+	children: React.ReactNode
+}) => {
+	return (
+		<div className="flex justify-center">
+			<Button
+				variant={"ghost"}
+				onClick={() => sortHandler(column.getIsSorted(), column)}
+				className="text-center hover:text-primary hover:bg-primary/10"
+			>
+				{children}
+				{getSortingArrowIcon(column.getIsSorted())}
+			</Button>
+		</div>
+	)
+}
 
 export const columns: ColumnDef<ProductStock>[] = [
 	{
@@ -19,28 +50,9 @@ export const columns: ColumnDef<ProductStock>[] = [
 	{
 		accessorKey: "averageShipping",
 		header: ({ column }) => (
-			<div className="flex justify-center">
-				<Button
-					variant={"ghost"}
-					onClick={() => {
-						if (!column.getIsSorted()) column.toggleSorting(false)
-						else if (column.getIsSorted() == "asc") column.toggleSorting(true)
-						else column.clearSorting()
-					}}
-					className="text-center hover:text-primary hover:bg-primary/10"
-				>
-					<span className="pr-2">平均出貨量</span>
-					{column.getIsSorted() ? (
-						column.getIsSorted() == "asc" ? (
-							<LuArrowDown01 />
-						) : (
-							<LuArrowDown10 />
-						)
-					) : (
-						<LuArrowDownUp />
-					)}
-				</Button>
-			</div>
+			<SortButton column={column}>
+				<span className="pr-2">平均出貨量</span>
+			</SortButton>
 		),
 		cell: ({ row }) => (
 			<div className="lowercase text-center">{row.getValue("averageShipping")}</div>
@@ -49,56 +61,18 @@ export const columns: ColumnDef<ProductStock>[] = [
 	{
 		accessorKey: "periodCount",
 		header: ({ column }) => (
-			<div className="flex justify-center">
-				<Button
-					variant={"ghost"}
-					onClick={() => {
-						if (!column.getIsSorted()) column.toggleSorting(false)
-						else if (column.getIsSorted() == "asc") column.toggleSorting(true)
-						else column.clearSorting()
-					}}
-					className="text-center hover:text-primary hover:bg-primary/10"
-				>
-					<span className="pr-2">累積期數</span>
-					{column.getIsSorted() ? (
-						column.getIsSorted() == "asc" ? (
-							<LuArrowDown01 />
-						) : (
-							<LuArrowDown10 />
-						)
-					) : (
-						<LuArrowDownUp />
-					)}
-				</Button>
-			</div>
+			<SortButton column={column}>
+				<span className="pr-2">累積期數</span>
+			</SortButton>
 		),
 		cell: ({ row }) => <div className="lowercase text-center">{row.getValue("periodCount")}</div>
 	},
 	{
 		accessorKey: "amount",
 		header: ({ column }) => (
-			<div className="flex justify-end">
-				<Button
-					variant={"ghost"}
-					onClick={() => {
-						if (!column.getIsSorted()) column.toggleSorting(false)
-						else if (column.getIsSorted() == "asc") column.toggleSorting(true)
-						else column.clearSorting()
-					}}
-					className="text-right hover:text-primary hover:bg-primary/10"
-				>
-					<span className="pr-2">庫存數量</span>
-					{column.getIsSorted() ? (
-						column.getIsSorted() == "asc" ? (
-							<LuArrowDown01 />
-						) : (
-							<LuArrowDown10 />
-						)
-					) : (
-						<LuArrowDownUp />
-					)}
-				</Button>
-			</div>
+			<SortButton column={column}>
+				<span className="pr-2">庫存數量</span>
+			</SortButton>
 		),
 		cell: ({ row }) => <div className="lowercase text-right pr-4">{row.getValue("amount")}</div>
 	}
