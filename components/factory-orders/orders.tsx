@@ -51,6 +51,7 @@ const orders: FactoryOrder[] = [
 export const FactoryOrders = () => {
 	return (
 		<div className="h-full flex flex-col space-y-6 p-7 bg-neutral-500/90 rounded-[32px] overflow-hidden overflow-y-scroll">
+			<div className="text-primary-foreground text-3xl font-bold">工廠訂單狀態</div>
 			{orders.map((order) => (
 				<FactoryOrderModal
 					key={order.orderId}
