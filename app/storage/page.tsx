@@ -1,3 +1,4 @@
+import { ProductStock } from "./components/product-stock"
 import { StockStatus } from "./components/stock-status"
 
 const StoragePage = () => {
@@ -8,6 +9,7 @@ const StoragePage = () => {
 				<div className="text-4xl">倉儲管理系統</div>
 			</div>
 			<StockStatus />
+			<ProductStock />
 		</div>
 	)
 }
