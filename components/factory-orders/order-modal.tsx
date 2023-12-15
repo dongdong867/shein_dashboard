@@ -35,7 +35,7 @@ const OrderStatus = ({ status, percentage }: OrderStatusType) => {
 					<Progress value={100} className="bg-base-100/20" />
 					<div className="w-20 bg-primary rounded-full" />
 				</div>
-				<div className="text-4xl font-bold">訂單生產中...</div>
+				<div className="text-4xl font-bold">訂單運送中...</div>
 			</div>
 		)
 	}
@@ -47,7 +47,7 @@ const OrderStatus = ({ status, percentage }: OrderStatusType) => {
 				<Progress value={percentage} className="bg-base-100/20" />
 				<div className="w-20 bg-base-100/20 rounded-full" />
 			</div>
-			<div className="text-4xl font-bold">訂單運送中...</div>
+			<div className="text-4xl font-bold">訂單生產中...</div>
 		</div>
 	)
 }
