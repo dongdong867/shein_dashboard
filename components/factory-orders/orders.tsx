@@ -53,6 +53,7 @@ export const FactoryOrders = () => {
 		<div className="h-full flex flex-col space-y-6 p-7 bg-neutral-500/90 rounded-[32px] overflow-hidden overflow-y-scroll">
 			{orders.map((order) => (
 				<FactoryOrderModal
+					key={order.orderId}
 					orderId={order.orderId}
 					orderDate={order.orderDate}
 					status={order.status}
