@@ -4,7 +4,7 @@ export const SafetyStorageModal = ({
 	safetyStoragePercentage: number
 }) => {
 	return (
-		<div className="w-36 h-full py-6 flex flex-col justify-center place-items-center space-y-3">
+		<div className="w-36 h-full py-4 flex flex-col justify-center place-items-center space-y-3">
 			{safetyStoragePercentage > 1.1 ? (
 				<>
 					<div className="w-full h-full rounded-full bg-good" />
