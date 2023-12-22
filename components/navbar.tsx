@@ -64,12 +64,12 @@ const Navbar = () => {
 				</Link>
 
 				{/* Link to Factor Processing System */}
-				<Link href={"/"}>
+				<Link href={"/supply"}>
 					<Button variant={"ghost"} asChild className="h-max flex justify-between rounded-2xl">
 						<div>
 							<div className="flex place-items-center space-x-3 max-lg:hidden">
 								<MdFactory size={20} />
-								<div className="text-lg xl:text-xl">工廠排程系統</div>
+								<div className="text-lg xl:text-xl">供應鏈系統</div>
 							</div>
 							<div className="lg:hidden">
 								<MdFactory size={30} />
