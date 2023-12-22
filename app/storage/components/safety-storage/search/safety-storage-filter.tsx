@@ -11,7 +11,7 @@ import {
 export const SafetyStorageFilter = () => {
 	return (
 		<div className="w-1/3 flex flex-col justify-end place-items-start space-x-2">
-			<div className="pl-2">Select status to display.</div>
+			<div className="text-sm pl-2">Select status to display.</div>
 			<Select defaultValue="all">
 				<SelectTrigger>
 					<SelectValue placeholder={"Select status to display."} />
