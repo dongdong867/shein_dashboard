@@ -67,7 +67,7 @@ const Navbar = () => {
 				<Link href={"/supply"}>
 					<Button variant={"ghost"} asChild className="h-max flex justify-between rounded-2xl">
 						<div>
-							<div className="flex place-items-center space-x-3 max-lg:hidden">
+							<div className="w-full flex justify-between place-items-center space-x-3 max-lg:hidden">
 								<MdFactory size={20} />
 								<div className="text-lg xl:text-xl">供應鏈系統</div>
 							</div>
