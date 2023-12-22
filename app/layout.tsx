@@ -11,7 +11,7 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-Outfit", display: 
 
 export const metadata: Metadata = {
 	title: "shein dashboard",
-	description: ""
+	description: "Digital transformation plan of Shein."
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
