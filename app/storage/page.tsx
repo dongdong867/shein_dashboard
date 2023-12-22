@@ -1,4 +1,4 @@
-import { SafetyStorage } from "./components/safety-storage"
+import { SafetyStorage, SafetyStorageAnalysis } from "./components/safety-storage"
 import { ProductStock } from "./components/product-stock"
 import { StockStatus } from "./components/stock-status"
 
@@ -12,6 +12,7 @@ const StoragePage = () => {
 			<StockStatus />
 			<ProductStock />
 			<SafetyStorage />
+			<SafetyStorageAnalysis />
 		</div>
 	)
 }
