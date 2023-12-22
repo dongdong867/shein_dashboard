@@ -1,4 +1,4 @@
-import { SafetyStorageModal, SafetyStorageSearch } from "."
+import { SafetyStorageModal, SafetyStorageFilter } from "."
 
 export const SafetyStorage = () => {
 	return (
@@ -7,13 +7,16 @@ export const SafetyStorage = () => {
 				<div className="w-full h-max -space-y-1 font-bold mb-4">
 					<div className="text-2xl">安全庫存查詢</div>
 					<div className="text-sm">資料時間: 3204/2/30 25:61</div>
-        </div>
-        <SafetyStorageSearch />
+				</div>
+				<SafetyStorageFilter />
 			</div>
-			<div className="font-bold py-2">商品名稱: </div>
-      <div className="w-full h-full flex justify-start place-items-center space-x-4 overflow-y-scroll pl-7">
-        <SafetyStorageModal safetyStoragePercentage={1} />
-      </div>
+			<div className="w-full h-full flex justify-start place-items-center space-x-4 overflow-y-scroll pl-7">
+				<SafetyStorageModal
+					safetyStoragePercentage={1}
+					productName="商品 3"
+					productId="As1frG0NfHsiK9X7kyTx"
+				/>
+			</div>
 		</div>
 	)
 }
