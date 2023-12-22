@@ -1,9 +1,9 @@
 // components
-import Link from "next/link"
 import Image from "next/image"
-import { Button } from "./ui/button"
-import { MdFactory } from "react-icons/md"
+import Link from "next/link"
 import { FaBox, FaChartArea, FaClipboardList } from "react-icons/fa"
+import { MdFactory } from "react-icons/md"
+import { Button } from "./ui/button"
 // images
 import SheinLogo from "/public/shein-logo.png"
 
@@ -62,6 +62,22 @@ const Navbar = () => {
 						</div>
 					</Button>
 				</Link>
+
+				{/* Link to Customer Management System */}
+				<Link href={"/customer"}>
+					<Button variant={"ghost"} asChild className="h-max flex justify-between rounded-2xl">
+						<div>
+							<div className="flex place-items-center space-x-3 max-lg:hidden">
+								<FaClipboardList size={20} />
+								<div className="text-lg xl:text-xl">顧客管理系統</div>
+							</div>
+							<div className="lg:hidden">
+								<FaClipboardList size={30} />
+							</div>
+						</div>
+					</Button>
+				</Link>
+
 
 				{/* Link to Factor Processing System */}
 				<Link href={"/supply"}>
