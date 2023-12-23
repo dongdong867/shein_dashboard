@@ -15,6 +15,9 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+	th {
+		@apply w-max
+	}
 
 	.hide-scrollbar {
 		scrollbar-width: none;
