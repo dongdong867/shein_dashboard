@@ -1,7 +1,7 @@
 import { adminFirestore } from "@/lib/firestore"
 import { StockStatus } from "@/types/stock-status"
 
-export const getStockStatus = async (): Promise<StockStatus[]> => {
+export const getStockStatus = async (): Promise<{stockStatus: StockStatus[], updateAt: string}> => {
 	const docs = await adminFirestore.collection("storage").get()
 
 	if (docs.size == 0) throw new Error("error on fetching stock status.")
@@ -19,5 +19,5 @@ export const getStockStatus = async (): Promise<StockStatus[]> => {
 		)
 	})
 
-	return stockStatus
+	return {stockStatus: stockStatus, updateAt: new Date().toLocaleString()}
 }
