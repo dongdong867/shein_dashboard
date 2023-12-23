@@ -1,15 +1,14 @@
 import { Progress } from "../ui/progress"
 
-
 type OrderModalType = {
-	orderId: string,
-	orderDate: string,
-	status: "inline" | "processing" | "shipping",
+	orderId: string
+	orderDate: Date
+	status: "inline" | "processing" | "shipping"
 	percentage: number
 }
 
 type OrderStatusType = {
-	status: "inline" | "processing" | "shipping",
+	status: "inline" | "processing" | "shipping"
 	percentage: number
 }
 
@@ -52,12 +51,12 @@ const OrderStatus = ({ status, percentage }: OrderStatusType) => {
 	)
 }
 
-export const FactoryOrderModal = ({orderId, orderDate, status, percentage}: OrderModalType) => {
+export const FactoryOrderModal = ({ orderId, orderDate, status, percentage }: OrderModalType) => {
 	return (
 		<div className="w-full h-max font-medium bg-base/90 p-5 2xl:p-6 rounded-3xl">
 			<div className="text-sm text-wrap leading-4 space-y-1">
-				<div>訂單編號: {" "} {orderId}</div>
-				<div className="max-2xl:hidden">訂單產生日期: {" "} {orderDate}</div>
+				<div>訂單編號: {orderId}</div>
+				<div className="max-2xl:hidden">訂單產生日期: {orderDate.toLocaleString()}</div>
 			</div>
 			<OrderStatus status={status} percentage={percentage} />
 		</div>
