@@ -75,8 +75,8 @@ export default class RFM extends PureComponent {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="顧客數" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-          <Bar dataKey="平均消費金額" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+          <Bar dataKey="顧客數" fill="#094074" activeBar={<Rectangle fill="#f4d35e" />} />
+          <Bar dataKey="平均消費金額" fill="#accbe1" activeBar={<Rectangle fill="#faf0ca" />} />
         </BarChart>
       </ResponsiveContainer>
     );
