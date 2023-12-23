@@ -38,9 +38,9 @@ const AgeClusterModel = ({ data, title }: Datas & {title: String}) => {
                         <YAxis />
                         <Tooltip />
                         <Legend />
-                        {/* #0d3b66 #faf0ca #f4d35e #ee964b #f95738 */} ffeecf d6e3f8 accbe1 cee5f2
+                        {/* #0d3b66 #faf0ca #f4d35e #ee964b #f95738 ffeecf d6e3f8 accbe1 cee5f2 */}
                         <Bar dataKey="20歲以下" stackId="a" fill="#0c365c" />
-                        <Bar dataKey="20~30歲" stackId="a" fill="#accbe1" />0d3b66 faf0ca
+                        <Bar dataKey="20~30歲" stackId="a" fill="#accbe1" />
                         <Bar dataKey="31~45歲" stackId="a" fill="#3c6997" />
                         <Bar dataKey="46~60歲" stackId="a" fill="#094074" />
                         <Bar dataKey="60歲以上" stackId="a" fill="#d4e9f5" />
