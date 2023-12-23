@@ -11,7 +11,6 @@ const app = !getApps().length ? initializeApp({
 } as ServiceAccount)}) : getApp()
 
 const adminFirestore = getFirestore(app)
-adminFirestore.settings({ ignoreUndefinedProperties: true })
 
 export default app
 export { adminFirestore }
