@@ -1,6 +1,7 @@
 // import { ProductStock } from "./components/product-stock"
 // import { StockStatus } from "./components/stock-status"
 
+import { CustomerCluster } from "./components/customer-cluster/customer_cluster"
 import { CustomerOrder } from "./components/customer-order/customer_order"
 
 const CustomerPage = () => {
@@ -10,6 +11,7 @@ const CustomerPage = () => {
 				<div className="text-sm">SHEIN 數位轉型計畫</div>
 				<div className="text-4xl">顧客管理系統</div>
 			</div>
+            <CustomerCluster />
             <CustomerOrder />
 			{/* <StockStatus />
 			<ProductStock /> */}
