@@ -4,6 +4,16 @@ import Image from "next/image"
 import { Button } from "./ui/button"
 import { MdFactory } from "react-icons/md"
 import { FaBox, FaChartArea, FaClipboardList } from "react-icons/fa"
+import { useState } from "react"
+import {
+	DropdownMenu,
+	DropdownMenuTrigger,
+	DropdownMenuContent,
+	DropdownMenuSub,
+	DropdownMenuSubTrigger,
+	DropdownMenuItem
+} from "./ui/dropdown-menu"
+
 // images
 import SheinLogo from "/public/shein-logo.png"
 
@@ -64,21 +74,44 @@ const Navbar = () => {
 				</Link>
 
 				{/* Link to Factor Processing System */}
-				<Link href={"/supply"}>
-					<Button variant={"ghost"} asChild className="h-max flex justify-between rounded-2xl">
-						<div>
-							<div className="w-full flex justify-between place-items-center space-x-3 max-lg:hidden">
-								<MdFactory size={20} />
-								<div className="text-lg xl:text-xl">供應鏈系統</div>
-							</div>
-							<div className="lg:hidden">
-								<MdFactory size={30} />
-							</div>
-						</div>
-					</Button>
-				</Link>
+				<SupplyDropdown />
 			</div>
 		</div>
+	)
+}
+
+const SupplyDropdown = () => {
+	return (
+		<DropdownMenu>
+			<DropdownMenuTrigger>
+				<Button variant={"ghost"} asChild className="h-max flex justify-between rounded-2xl">
+					<div>
+						<div className="flex place-items-center space-x-3 max-lg:hidden">
+							<MdFactory size={20} />
+							<div className="text-lg xl:text-xl">供應鏈系統</div>
+						</div>
+						<div className="lg:hidden">
+							<MdFactory size={30} />
+						</div>
+					</div>
+				</Button>
+			</DropdownMenuTrigger>
+
+			<DropdownMenuContent>
+				<DropdownMenuSub>
+					<DropdownMenuSubTrigger>
+						<DropdownMenuItem>
+							<Link href="/order-allocation">訂單分配及管理系統</Link>
+						</DropdownMenuItem>
+					</DropdownMenuSubTrigger>
+					<DropdownMenuSubTrigger>
+						<DropdownMenuItem>
+							<Link href="/order-query">訂單查詢系統</Link>
+						</DropdownMenuItem>
+					</DropdownMenuSubTrigger>
+				</DropdownMenuSub>
+			</DropdownMenuContent>
+		</DropdownMenu>
 	)
 }
 
