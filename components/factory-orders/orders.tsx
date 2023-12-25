@@ -1,10 +1,8 @@
-import { FactoryOrder } from "@/types/factory-order"
 import { FactoryOrderModal } from "."
 import { getFactoryOrders } from "@/actions/factory-order"
 
 export const FactoryOrders = async () => {
-	// const orders = await getFactoryOrders()
-	const orders = [] as FactoryOrder[]
+	const orders = await getFactoryOrders()
 
 	return (
 		<div className="h-full flex flex-col space-y-4 2xl:space-y-6 px-5 py-7 2xl:p-7 bg-neutral-500/90 rounded-[32px] overflow-hidden overflow-y-scroll">
