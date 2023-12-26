@@ -8,11 +8,15 @@ import {
 	SelectValue
 } from "@/components/ui/select"
 
-export const SafetyStorageFilter = () => {
+export const SafetyStorageFilter = ({
+	setFilter
+}: {
+	setFilter: React.Dispatch<React.SetStateAction<string>>
+}) => {
 	return (
 		<div className="w-1/3 flex flex-col justify-end place-items-start space-x-2">
 			<div className="text-sm pl-2">Select status to display.</div>
-			<Select defaultValue="all">
+			<Select defaultValue="all" onValueChange={(value) => setFilter(value)}>
 				<SelectTrigger>
 					<SelectValue placeholder={"Select status to display."} />
 				</SelectTrigger>

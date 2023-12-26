@@ -1,8 +1,11 @@
 import { SafetyStorage, SafetyStorageAnalysis } from "./components/safety-storage"
 import { ProductStock } from "./components/product-stock"
 import { StockStatus } from "./components/stock-status"
+import { getSafetyStorage } from "@/actions/safety-storage"
 
-const StoragePage = () => {
+const StoragePage = async () => {
+	const safetyStorage = await getSafetyStorage()
+
 	return (
 		<div className="w-full h-full p-10 space-y-8 flex flex-col justify-start bg-neutral-500/90 rounded-[32px] overflow-hidden">
 			<div className="text-primary-foreground font-bold space-y-2">
@@ -11,8 +14,8 @@ const StoragePage = () => {
 			</div>
 			<StockStatus />
 			<ProductStock />
-			<SafetyStorage />
-			<SafetyStorageAnalysis />
+			<SafetyStorage data={safetyStorage} />
+			<SafetyStorageAnalysis initialData={safetyStorage} />
 		</div>
 	)
 }
