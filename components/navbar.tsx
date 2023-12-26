@@ -3,15 +3,14 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "./ui/button"
 import { MdFactory } from "react-icons/md"
+import { IoIosArrowForward } from "react-icons/io"
 import { FaBox, FaChartArea, FaClipboardList } from "react-icons/fa"
-import { useState } from "react"
-import {DropdownMenu, 
-		DropdownMenuTrigger, 
-		DropdownMenuContent, 
-		DropdownMenuSub, 
-		DropdownMenuSubTrigger, 
-		DropdownMenuItem
-} from "./ui/dropdown-menu";
+import {
+	DropdownMenu,
+	DropdownMenuTrigger,
+	DropdownMenuContent,
+	DropdownMenuItem
+} from "./ui/dropdown-menu"
 
 // images
 import SheinLogo from "/public/shein-logo.png"
@@ -79,40 +78,43 @@ const Navbar = () => {
 	)
 }
 
-
 const SupplyDropdown = () => {
 	return (
-	  <DropdownMenu>
-		<DropdownMenuTrigger>
-		  <Button variant={"ghost"} asChild className="h-max flex justify-between rounded-2xl">
-			<div>
-			  <div className="flex place-items-center space-x-3 max-lg:hidden">
-				<MdFactory size={20} />
-				<div className="text-lg xl:text-xl">供應鏈系統</div>
-			  </div>
-			  <div className="lg:hidden">
-				<MdFactory size={30} />
-			  </div>
-			</div>
-		  </Button>
-		</DropdownMenuTrigger>
-		
-		<DropdownMenuContent>
-		  <DropdownMenuSub>
-			<DropdownMenuSubTrigger>
-			  <DropdownMenuItem>
-			  <Link href="/order-allocation">訂單分配及管理系統</Link>
-			  </DropdownMenuItem>
-			</DropdownMenuSubTrigger>
-			<DropdownMenuSubTrigger>
-			  <DropdownMenuItem>
-			  <Link href="/order-query">訂單查詢系統</Link>
-			  </DropdownMenuItem>
-			</DropdownMenuSubTrigger>
-		  </DropdownMenuSub>
-		</DropdownMenuContent>
-	  </DropdownMenu>
-	);
-  };
+		<DropdownMenu>
+			<DropdownMenuTrigger>
+				<Button variant={"ghost"} asChild className="w-full h-max flex justify-between rounded-2xl">
+					<div>
+						<div className="w-full flex justify-between place-items-center space-x-3 max-lg:hidden">
+							<MdFactory size={20} />
+							<div className="text-lg xl:text-xl">供應鏈系統</div>
+						</div>
+						<div className="lg:hidden">
+							<MdFactory size={30} />
+						</div>
+					</div>
+				</Button>
+			</DropdownMenuTrigger>
+
+			<DropdownMenuContent className="bg-base/50 backdrop-blur-3xl rounded-lg">
+				<DropdownMenuItem>
+					<Link href="/order-allocation">
+						<div className="p-2 flex place-items-center text-primary hover:text-primary-foreground font-semibold text-base">
+							訂單分配及管理系統
+							<IoIosArrowForward />
+						</div>
+					</Link>
+				</DropdownMenuItem>
+				<DropdownMenuItem>
+					<Link href="/order-query">
+						<div className="p-2 flex place-items-center text-primary hover:text-primary-foreground font-semibold text-base">
+							訂單查詢系統
+							<IoIosArrowForward />
+						</div>
+					</Link>
+				</DropdownMenuItem>
+			</DropdownMenuContent>
+		</DropdownMenu>
+	)
+}
 
 export default Navbar

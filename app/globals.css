@@ -10,9 +10,19 @@
 
 @layer base {
 	* {
-		@apply border-border;
+		@apply border-border hide-scrollbar;
 	}
 	body {
 		@apply bg-background text-foreground;
+	}
+	th {
+		@apply w-max
+	}
+
+	.hide-scrollbar {
+		scrollbar-width: none;
+	}
+	.hide-scrollbar::-webkit-scrollbar {
+		display: none;
 	}
 }

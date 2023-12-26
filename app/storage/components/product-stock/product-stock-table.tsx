@@ -25,38 +25,19 @@ import { useState } from "react"
 // util
 import { columns } from "./columns"
 import { Button } from "@/components/ui/button"
+// types
+import { ProductStock } from "@/types/product-stock"
 
-// TODO: REPLACE FAKE DATA
-const data: ProductStock[] = [
-	{
-		storageId: "test1",
-		storageName: "test1",
-		averageShipping: 100,
-		periodCount: 1,
-		amount: 1000
-	},
-	{
-		storageId: "test3",
-		storageName: "test3",
-		averageShipping: 300,
-		periodCount: 3,
-		amount: 3000
-	},
-	{
-		storageId: "test2",
-		storageName: "test2",
-		averageShipping: 200,
-		periodCount: 2,
-		amount: 2000
-	}
-]
-
-export const ProductStockTable = () => {
+export const ProductStockTable = ({
+	data
+}: {
+	data: { productName: string; productStock: ProductStock[] }
+}) => {
 	const [sorting, setSorting] = useState<SortingState>([])
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
 
 	const table = useReactTable({
-		data,
+		data: data.productStock,
 		columns,
 		onSortingChange: setSorting,
 		onColumnFiltersChange: setColumnFilters,
@@ -91,7 +72,7 @@ export const ProductStockTable = () => {
 	return (
 		<div className="w-full h-full p-7 space-y-4 bg-white rounded-[32px]">
 			<div className="flex justify-between place-items-center">
-				<div className="pl-1 font-bold">商品名稱: </div>
+				<div className="pl-1 font-bold">商品名稱: {data.productName}</div>
 				<Input
 					placeholder="搜尋倉庫編號..."
 					value={(table.getColumn("storageId")?.getFilterValue() as string) ?? ""}
@@ -106,7 +87,7 @@ export const ProductStockTable = () => {
 							<TableRow key={headerGroup.id}>
 								{headerGroup.headers.map((header) => {
 									return (
-										<TableHead key={header.id}>
+										<TableHead key={header.id} className="w-max p-0">
 											{header.isPlaceholder
 												? null
 												: flexRender(header.column.columnDef.header, header.getContext())}
