@@ -1,6 +1,15 @@
-import { SafetyStorageModal, SafetyStorageFilter } from "."
+"use client"
 
-export const SafetyStorage = () => {
+// hooks
+import { useState } from "react"
+// components
+import { SafetyStorageModal } from "./safety-storage-modal"
+import { SafetyStorageFilter } from "./safety-storage-filter"
+
+
+export const SafetyStorage = ({ initialData }: { initialData: any[] }) => {
+	const [data, setData] = useState(initialData)
+
 	return (
 		<div className="w-full h-max min-h-[400px] py-7 flex flex-col justify-start place-items-start rounded-[32px] bg-base/90">
 			<div className="w-full flex justify-between place-items-center px-7 mb-4">
