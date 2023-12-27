@@ -106,7 +106,7 @@ const SupplyDropdown = () => {
 			</DropdownMenuSubTrigger>
 			<DropdownMenuSubTrigger>
 			  <DropdownMenuItem>
-			  <Link href="/order-query">訂單查詢系統</Link>
+			  <Link href="/order-query">工廠訂單查詢系統</Link>
 			  </DropdownMenuItem>
 			</DropdownMenuSubTrigger>
 		  </DropdownMenuSub>
