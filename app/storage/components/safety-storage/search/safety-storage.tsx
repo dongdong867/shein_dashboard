@@ -49,6 +49,7 @@ export const SafetyStorage = ({ data }: { data: SafetyStorageType[] }) => {
 
 					const safetyStorageModal = (
 						<SafetyStorageModal
+							key={safetyStorage.id}
 							safetyStoragePercentage={safetyStoragePercentage}
 							productId={safetyStorage.id}
 							productName={safetyStorage.name}
