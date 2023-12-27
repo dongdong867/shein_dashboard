@@ -5,6 +5,7 @@ import { FactoryDetail } from "./factory-detail";
 import { data } from "./factory-data";
 import { order } from "./factory-order"
 import { OrderSearch } from "./order-search";
+import { FactoryOrder } from "@/types/factory-order";
 
 export const FactoryOrderStatus = () => {      
   const [searchParams, setSearchParams] = useState({});
