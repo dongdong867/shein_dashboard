@@ -1,3 +1,4 @@
+import { FactoryOrder } from "@/types/factory-order";
 
 
 export const order: FactoryOrder[] = [
@@ -6,44 +7,44 @@ export const order: FactoryOrder[] = [
 		factoryId: "incididunt",
 		productId: "est",
 		amount: 20000,
-		percentage: 0,
+		schedulePercentage: 0,
 		status: "inline",
-		orderDate: "3023/02/30 25:61"
+		createAt: new Date()
 	},
 	{
 		orderId: "fugiat",
 		factoryId: "nisi",
 		productId: "enim",
 		amount: 10000,
-		percentage: 20,
+		schedulePercentage: 20,
 		status: "processing",
-		orderDate: "3023/02/30 25:61"
+		createAt: new Date()
 	},
 	{
 		orderId: "nulla",
 		factoryId: "ex",
 		productId: "veniam",
 		amount: 50000,
-		percentage: 70,
+		schedulePercentage: 70,
 		status: "processing",
-		orderDate: "3023/02/30 25:61"
+		createAt: new Date()
 	},
 	{
 		orderId: "esse",
 		factoryId: "ex",
 		productId: "sint",
 		amount: 80000,
-		percentage: 100,
+		schedulePercentage: 100,
 		status: "shipping",
-		orderDate: "3023/02/30 25:61"
+		createAt: new Date()
 	},
 	{
 		orderId: "minim",
 		factoryId: "quis",
 		productId: "laborum",
 		amount: 70000,
-		percentage: 40,
+		schedulePercentage: 40,
 		status: "processing",
-		orderDate: "3023/02/30 25:61"
+		createAt: new Date()
 	}
 ]
