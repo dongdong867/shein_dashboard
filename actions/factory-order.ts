@@ -14,7 +14,6 @@ export const getFactoryOrders = cache(async (): Promise<FactoryOrder[]> => {
 	const factoryOrders = [] as FactoryOrder[]
 	docs.forEach((doc) => {
 		const data = doc.data()
-		console.log(data)
 		factoryOrders.push(
 			FactoryOrder.parse({
 				orderId: data.id,
