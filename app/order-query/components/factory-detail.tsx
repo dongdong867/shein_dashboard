@@ -46,7 +46,7 @@ export const FactoryDetail = ({ factory, order }: FactoryDetailProps) => {
 												style={{
 													position: "absolute",
 													width: "100%",
-													height: "17px",
+													height: "18px",
 													backgroundColor: "rgba(0, 0, 0, 0.1)",
 													zIndex: 1,
 													borderRadius: "10px"
@@ -55,12 +55,12 @@ export const FactoryDetail = ({ factory, order }: FactoryDetailProps) => {
 												<div
 													style={{
 														position: "absolute",
-														top: "-17px",
+														top: "-18px",
 														left: "50%",
 														transform: "translateX(-50%)",
 														display: "flex",
 														justifyContent: "space-between",
-														width: "342px"
+														width: "100%"
 													}}
 												>
 													<FaClipboardList
@@ -99,7 +99,7 @@ export const FactoryDetail = ({ factory, order }: FactoryDetailProps) => {
 												style={{
 													position: "absolute",
 													width: `${correspondingOrder.schedulePercentage}%`,
-													height: "17px",
+													height: "18px",
 													backgroundColor: "rgba(0, 0, 255, 0.45)",
 													zIndex: 3,
 													borderRadius: "10px"
@@ -136,13 +136,13 @@ export const FactoryDetail = ({ factory, order }: FactoryDetailProps) => {
 			<div className="flex flex-col text-gray-400">
 				<div className="flex items-center">
 					<FaIdCard className="mr-1" style={{ fontSize: "0.7em" }} />
-					<div style={{ fontSize: "0.9em" }}>{factory.id}</div> <span className="mr-5">&nbsp;</span>
+					<div style={{ fontSize: "0.8em" }}>{factory.id}</div> <span className="mr-5">&nbsp;</span>
 					<FaPhone className="mr-1" style={{ fontSize: "0.68em" }} />
-					<div style={{ fontSize: "0.9em" }}>{factory.phone}</div>
+					<div style={{ fontSize: "0.8em" }}>{factory.phone}</div>
 				</div>
 				<div className="flex items-center">
 					<FaMapMarkerAlt className="mr-1" style={{ fontSize: "0.8em" }} />
-					<div style={{ fontSize: "0.9em" }}>{factory.address}</div>
+					<div style={{ fontSize: "0.8em" }}>{factory.address}</div>
 				</div>
 				<hr style={{ height: "1px", border: "1.3px solid lightgrey", width: "65%" }} />
 				{factory.status === "idle" && (
