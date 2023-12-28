@@ -1,5 +1,6 @@
 // types
 import { FactoryOrder } from "@/types/factory-order"
+import { Factory } from "@/types/factory"
 // utils
 import React from "react"
 // icons
