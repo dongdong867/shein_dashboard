@@ -86,23 +86,6 @@ const Navbar = () => {
 					</Button>
 				</Link>
 
-
-				{/* Link to Customer Management System */}
-				<Link href={"/customer"}>
-					<Button variant={"ghost"} asChild className="h-max flex justify-between rounded-2xl">
-						<div>
-							<div className="flex place-items-center space-x-3 max-lg:hidden">
-								<FaClipboardList size={20} />
-								<div className="text-lg xl:text-xl">顧客管理系統</div>
-							</div>
-							<div className="lg:hidden">
-								<FaClipboardList size={30} />
-							</div>
-						</div>
-					</Button>
-				</Link>
-
-
 				{/* Link to Factor Processing System */}
 				<SupplyDropdown />
 			</div>
