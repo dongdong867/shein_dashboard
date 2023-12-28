@@ -16,11 +16,11 @@ type Datas = {
 const AgeClusterModel = ({ data, title }: Datas & {title: String}) => {
     return (
         <>
-        <div className='flex flex-col'>
-            <div className="flex justify-center font-bold text-lg" style={{width: "450px"}}>
+        <div className='w-full flex flex-col'>
+            <div className="flex w-full justify-center font-bold text-lg">
 			    {title}
 		    </div>
-            <div className="p-7" style={{width: "450px",height: "300px"}}>
+            <div className="w-full p-7" style={{height: "300px"}}>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         width={500}
