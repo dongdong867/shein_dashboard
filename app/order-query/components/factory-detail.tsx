@@ -9,24 +9,9 @@ import { FaPhone, FaMapMarkerAlt, FaIdCard, FaClipboardList, FaCog, FaTruck } fr
 type FactoryDetailProps = {
 	factory: Factory
 	order: FactoryOrder[]
-	searchParams: { factoryName?: string; orderId?: string }
 }
 
-export const FactoryDetail: React.FC<FactoryDetailProps> = ({ factory, order, searchParams }) => {
-	const doesFactoryMatchSearch = () => {
-		if (searchParams.factoryName) {
-			return factory.name === searchParams.factoryName
-		}
-		return true
-	}
-
-	const doesOrderMatchSearch = () => {
-		if (searchParams.orderId) {
-			return factory.schedule.some((order) => order.orderId === searchParams.orderId)
-		}
-		return true
-	}
-
+export const FactoryDetail = ({ factory, order }: FactoryDetailProps) => {
 	const statusClassName = factory.status === "working" ? "bg-blue-400" : "bg-gray-400"
 
 	const factoryOrder = () => {
@@ -50,7 +35,6 @@ export const FactoryDetail: React.FC<FactoryDetailProps> = ({ factory, order, se
 								key={factoryOrder.orderId}
 								style={{ marginTop: "40px", position: "relative", paddingTop: "20px" }}
 							>
-								{/* <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.06)', position: 'absolute', top: 0, left: 0, borderRadius: '10px', width: '100%', height: '88%', zIndex: 2 }}></div>  */}
 								{order
 									.filter((o) => o.orderId === factoryOrder.orderId)
 									.map((correspondingOrder) => (
@@ -138,45 +122,38 @@ export const FactoryDetail: React.FC<FactoryDetailProps> = ({ factory, order, se
 	}
 
 	return (
-		doesFactoryMatchSearch() &&
-		doesOrderMatchSearch() && (
-			<div className="w-[calc(50%-10px)] h-full p-5 space-y-1 bg-white rounded-[20px]">
-				<div className="flex justify-between items-center">
-					<div className="font-bold" style={{ fontSize: "1.3em" }}>
-						{factory.name}
-					</div>
-					<div
-						className={`flex items-center font-bold rounded-[20px] py-0.8 px-1 ${statusClassName} text-white`}
-					>
-						{factory.status}
-					</div>
+		<div className="w-[calc(50%-10px)] h-full p-5 space-y-1 bg-white rounded-[20px]">
+			<div className="flex justify-between items-center">
+				<div className="font-bold" style={{ fontSize: "1.3em" }}>
+					{factory.name}
 				</div>
-				<div className="flex flex-col text-gray-400">
-					<div className="flex items-center">
-						<FaIdCard className="mr-1" style={{ fontSize: "0.7em" }} />
-						<div style={{ fontSize: "0.9em" }}>{factory.id}</div>{" "}
-						<span className="mr-5">&nbsp;</span>
-						<FaPhone className="mr-1" style={{ fontSize: "0.68em" }} />
-						<div style={{ fontSize: "0.9em" }}>{factory.phone}</div>
-					</div>
-					<div className="flex items-center">
-						<FaMapMarkerAlt className="mr-1" style={{ fontSize: "0.8em" }} />
-						<div style={{ fontSize: "0.9em" }}>{factory.address}</div>
-					</div>
-					<hr style={{ height: "1px", border: "1.3px solid lightgrey", width: "65%" }} />
-					{factory.status === "idle" && (
-						<span
-							className="text-black text-center"
-							style={{ fontSize: "1.3em", marginTop: "20px" }}
-						>
-							目前無訂單
-						</span>
-					)}
-					<div className="text-black">
-						<ul>{factoryOrder()}</ul>
-					</div>
+				<div
+					className={`flex items-center font-bold rounded-[20px] py-0.8 px-1 ${statusClassName} text-white`}
+				>
+					{factory.status}
 				</div>
 			</div>
-		)
+			<div className="flex flex-col text-gray-400">
+				<div className="flex items-center">
+					<FaIdCard className="mr-1" style={{ fontSize: "0.7em" }} />
+					<div style={{ fontSize: "0.9em" }}>{factory.id}</div> <span className="mr-5">&nbsp;</span>
+					<FaPhone className="mr-1" style={{ fontSize: "0.68em" }} />
+					<div style={{ fontSize: "0.9em" }}>{factory.phone}</div>
+				</div>
+				<div className="flex items-center">
+					<FaMapMarkerAlt className="mr-1" style={{ fontSize: "0.8em" }} />
+					<div style={{ fontSize: "0.9em" }}>{factory.address}</div>
+				</div>
+				<hr style={{ height: "1px", border: "1.3px solid lightgrey", width: "65%" }} />
+				{factory.status === "idle" && (
+					<span className="text-black text-center" style={{ fontSize: "1.3em", marginTop: "20px" }}>
+						目前無訂單
+					</span>
+				)}
+				<div className="text-black">
+					<ul>{factoryOrder()}</ul>
+				</div>
+			</div>
+		</div>
 	)
 }
