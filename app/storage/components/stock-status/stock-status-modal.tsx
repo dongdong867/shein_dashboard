@@ -21,7 +21,7 @@ export const StockStatusModal = ({ percentage, name }: Props) => {
 					style={{ height: percentage + "%" }}
 				/>
 			</div>
-			<div>{name}</div>
+			<div className="text-sm font-medium">{name}</div>
 		</div>
 	)
 }
