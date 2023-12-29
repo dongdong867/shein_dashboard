@@ -84,7 +84,7 @@ return (
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="period" />
         {/* <YAxis domain={['auto', 'auto']} /> */}
-        <YAxis domain={[-15, 'dataMax']}/>
+        <YAxis domain={[-15, 20]}/>
         <Tooltip />
         <Legend />
 
@@ -120,10 +120,9 @@ const titleStyle = { fontSize: '24px', fontWeight: 'bold', color: 'black' }; // 
 return (
     <div style={{ display: 'flex' }}>
     <div style={{ flex: 1 }}>
-        <h2 style={titleStyle}>Total Sales & Growth</h2>
+        <h2 style={titleStyle}>Total Growth</h2>
         <EnhancedTotalSalesChart />
     </div>
-    {/* ... （同你提供的 TotalIncomeChart 和其他設定） */}
     </div>
 );
 };
