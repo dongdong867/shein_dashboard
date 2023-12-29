@@ -11,7 +11,7 @@ export const Factory = z.object({
         z.object({
             orderId: z.string(),
             index: z.number(),
-    })),
+    })).default([]),
 })
 
 export type Factory = z.infer<typeof Factory>

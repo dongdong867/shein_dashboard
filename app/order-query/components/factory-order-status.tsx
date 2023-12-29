@@ -30,15 +30,19 @@ export const FactoryOrderStatus = ({
 						<div className="text-2xl">工廠資訊及生產進度</div>
 						<div className="w-full h-full p-7 flex flex-wrap gap-6">
 							{factory.map((factory) => {
-								if (
-									searchFactoryName == "" ||
-									searchOrderId == "" ||
-									(factory.name == searchFactoryName &&
-										factory.schedule.some((order) => order.orderId === searchOrderId))
-								) {
-									const factoryOrders = orders.filter((o) =>
-										factory.schedule.some((schedule) => schedule.orderId === o.orderId)
-									)
+								const factoryOrders = orders.filter((o) =>
+									factory.schedule.some((schedule) => schedule.orderId === o.orderId)
+								)
+								if (searchFactoryName !== "" || searchOrderId !== "") {
+									if (
+										factory.name == searchFactoryName &&
+										factory.schedule.some((order) => order.orderId === searchOrderId)
+									) {
+										return (
+											<FactoryDetail key={factory.id} factory={factory} order={factoryOrders} />
+										)
+									}
+								} else {
 									return <FactoryDetail key={factory.id} factory={factory} order={factoryOrders} />
 								}
 							})}
