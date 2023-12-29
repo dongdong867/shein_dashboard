@@ -28,23 +28,34 @@ export const FactoryOrderStatus = ({
 				<div className="w-full flex justify-between place-items-center px-7 pt-7">
 					<div className="w-full h-max -space-y-1 font-bold mb-4">
 						<div className="text-2xl">工廠資訊及生產進度</div>
-						<div className="w-full h-full p-7 flex flex-wrap gap-6">
+						<div className="w-full h-full p-7 flex flex-col space-y-4">
 							{factory.map((factory) => {
 								const factoryOrders = orders.filter((o) =>
 									factory.schedule.some((schedule) => schedule.orderId === o.orderId)
 								)
-								if (searchFactoryName !== "" || searchOrderId !== "") {
+								if (searchFactoryName != "") {
+									if (factory.name == searchFactoryName) {
+										return (
+											<FactoryDetail key={factory.id} factory={factory} order={factoryOrders} />
+										)
+									} else {
+										return
+									}
+								}
+
+								if (searchOrderId != "") {
 									if (
-										factory.name == searchFactoryName &&
-										factory.schedule.some((order) => order.orderId === searchOrderId)
+										factory.schedule.filter((order) => order.orderId == searchOrderId).length > 0
 									) {
 										return (
 											<FactoryDetail key={factory.id} factory={factory} order={factoryOrders} />
 										)
+									} else {
+										return
 									}
-								} else {
-									return <FactoryDetail key={factory.id} factory={factory} order={factoryOrders} />
 								}
+
+								return <FactoryDetail key={factory.id} factory={factory} order={factoryOrders} />
 							})}
 						</div>
 					</div>
