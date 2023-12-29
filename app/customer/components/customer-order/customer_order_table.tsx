@@ -3,22 +3,22 @@
 // components
 import { Input } from "@/components/ui/input"
 import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow
+	Table,
+	TableBody,
+	TableCell,
+	TableHead,
+	TableHeader,
+	TableRow
 } from "@/components/ui/table"
 import {
-    ColumnFiltersState,
-    SortingState,
-    flexRender,
-    getCoreRowModel,
-    getFilteredRowModel,
-    getPaginationRowModel,
-    getSortedRowModel,
-    useReactTable
+	ColumnFiltersState,
+	SortingState,
+	flexRender,
+	getCoreRowModel,
+	getFilteredRowModel,
+	getPaginationRowModel,
+	getSortedRowModel,
+	useReactTable
 } from "@tanstack/react-table"
 import { SetStateAction, useState } from "react"
 // util
@@ -46,7 +46,7 @@ const product: ProductInCustomerOrder[] = [
 const data: CustomerOrder[] = [
 	{
 		orderId: "t1",
-		customerId: "c2",
+		customerId: "Tintin",
 		createdAt: "2023/04/08 04:08",
 		price: 520,
 		// products: [product[0],product[2]],
@@ -54,7 +54,7 @@ const data: CustomerOrder[] = [
 	},
 	{
 		orderId: "t2",
-		customerId: "c1",
+		customerId: "Ann",
 		createdAt: "2023/04/08 08:08",
 		price: 520,
 		// products: [product[0]],
@@ -62,11 +62,46 @@ const data: CustomerOrder[] = [
 	},
 	{
 		orderId: "t3",
-		customerId: "c450",
+		customerId: "Tintin",
 		createdAt: "2023/04/08 14:08",
 		price: 520,
 		// products: product,
         products: [],
+	},
+	{
+		orderId: "t4",
+		customerId: "John",
+		createdAt: "2023/04/09 09:09",
+		price: 650,
+		products: []
+	},
+	{
+		orderId: "t5",
+		customerId: "Alice",
+		createdAt: "2023/04/09 12:30",
+		price: 720,
+		products: []
+	},
+	{
+		orderId: "t6",
+		customerId: "Bob",
+		createdAt: "2023/04/09 16:45",
+		price: 480,
+		products: []
+	},
+	{
+		"orderId": "t7",
+		"customerId": "Eva",
+		"createdAt": "2023/04/09 20:15",
+		"price": 550,
+		"products": []
+	},
+	{
+		"orderId": "t8",
+		"customerId": "Mark",
+		"createdAt": "2023/04/09 23:55",
+		"price": 610,
+		"products": []
 	}
 ]
 
