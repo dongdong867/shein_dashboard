@@ -60,7 +60,7 @@ export const FactoryDetail = ({ factory, order }: FactoryDetailProps) => {
 														transform: "translateX(-50%)",
 														display: "flex",
 														justifyContent: "space-between",
-														width: "342px"
+														width: "100%"
 													}}
 												>
 													<FaClipboardList
