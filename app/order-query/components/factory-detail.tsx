@@ -122,7 +122,7 @@ export const FactoryDetail = ({ factory, order }: FactoryDetailProps) => {
 	}
 
 	return (
-		<div className="w-[calc(50%-10px)] h-full p-5 space-y-1 bg-white rounded-[20px]">
+		<div className="w-full h-full p-5 space-y-1 bg-white rounded-[20px]">
 			<div className="flex justify-between items-center">
 				<div className="font-bold" style={{ fontSize: "1.3em" }}>
 					{factory.name}
