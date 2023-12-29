@@ -33,11 +33,14 @@ export const FactoryOrderStatus = ({
 								const factoryOrders = orders.filter((o) =>
 									factory.schedule.some((schedule) => schedule.orderId === o.orderId)
 								)
-								if (searchFactoryName !== "" || searchOrderId !== "") {
-									if (
-										factory.name == searchFactoryName &&
-										factory.schedule.some((order) => order.orderId === searchOrderId)
-									) {
+								if (searchFactoryName != "") {
+									if (factory.name == searchFactoryName) {
+										return (
+											<FactoryDetail key={factory.id} factory={factory} order={factoryOrders} />
+										)
+									}
+								} else if (searchOrderId !== "") {
+									if (factory.schedule.some((order) => order.orderId === searchOrderId)) {
 										return (
 											<FactoryDetail key={factory.id} factory={factory} order={factoryOrders} />
 										)
