@@ -115,16 +115,16 @@ export default class TrendChart extends PureComponent {
 
     return (
       // <ResponsiveContainer width="100%" height="500%">
-      <ResponsiveContainer width="100%" height={500}>
+      <ResponsiveContainer width="100%" height={400}>
         <LineChart
           width={500}
-          height={700}
+          height={500}
           data={data}
           margin={{
-            top: 100,
+            top: 80,
             right: 30,
             left: 20,
-            bottom: 70,
+            bottom: 40,
           }}          
         >
 

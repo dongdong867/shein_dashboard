@@ -71,14 +71,14 @@ const enhancedData = addGrowthData(data);
 
   
 return (
-    <ResponsiveContainer width="100%" height={500}>
+    <ResponsiveContainer width="100%" height={300}>
     <LineChart
         data={enhancedData}
         margin={{
         top: 30,
         right: 30,
         left: 20,
-        bottom: 50,
+        bottom: 30,
         }}
     >
         <CartesianGrid strokeDasharray="3 3" />

@@ -50,14 +50,14 @@ const data = [
 
 const TotalSalesChart = () => {
 return (
-  <ResponsiveContainer width="90%" height={400}>
+  <ResponsiveContainer width="90%" height={300}>
     <LineChart
       data={data}
       margin={{
-        top: 20,
+        top: 40,
         right: 10,
         left: 10,
-        bottom: 100,
+        bottom: 40,
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
@@ -80,14 +80,14 @@ return (
 
 const TotalIncomeChart = () => {
 return (
-  <ResponsiveContainer width="90%" height={400}>
+  <ResponsiveContainer width="90%" height={300}>
     <LineChart
       data={data}
       margin={{
-        top: 20,
+        top: 40,
         right: 10,
         left: 10,
-        bottom: 100,
+        bottom: 40,
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
