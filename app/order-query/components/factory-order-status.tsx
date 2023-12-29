@@ -38,16 +38,24 @@ export const FactoryOrderStatus = ({
 										return (
 											<FactoryDetail key={factory.id} factory={factory} order={factoryOrders} />
 										)
+									} else {
+										return
 									}
-								} else if (searchOrderId !== "") {
-									if (factory.schedule.some((order) => order.orderId === searchOrderId)) {
+								}
+
+								if (searchOrderId != "") {
+									if (
+										factory.schedule.filter((order) => order.orderId == searchOrderId).length > 0
+									) {
 										return (
 											<FactoryDetail key={factory.id} factory={factory} order={factoryOrders} />
 										)
+									} else {
+										return
 									}
-								} else {
-									return <FactoryDetail key={factory.id} factory={factory} order={factoryOrders} />
 								}
+
+								return <FactoryDetail key={factory.id} factory={factory} order={factoryOrders} />
 							})}
 						</div>
 					</div>
