@@ -3,22 +3,22 @@
 // components
 import { Input } from "@/components/ui/input"
 import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow
+	Table,
+	TableBody,
+	TableCell,
+	TableHead,
+	TableHeader,
+	TableRow
 } from "@/components/ui/table"
 import {
-    ColumnFiltersState,
-    SortingState,
-    flexRender,
-    getCoreRowModel,
-    getFilteredRowModel,
-    getPaginationRowModel,
-    getSortedRowModel,
-    useReactTable
+	ColumnFiltersState,
+	SortingState,
+	flexRender,
+	getCoreRowModel,
+	getFilteredRowModel,
+	getPaginationRowModel,
+	getSortedRowModel,
+	useReactTable
 } from "@tanstack/react-table"
 import { SetStateAction, useState } from "react"
 // util
@@ -46,27 +46,69 @@ const product: ProductInCustomerOrder[] = [
 const data: CustomerOrder[] = [
 	{
 		orderId: "t1",
-		customerId: "c2",
+		customerId: "Tintin",
 		createdAt: "2023/04/08 04:08",
-		price: 520,
+		price: 524,
 		// products: [product[0],product[2]],
-        products: [],
+        products: "毛衣x2 運動褲x1 項鍊x5",
 	},
 	{
 		orderId: "t2",
-		customerId: "c1",
+		customerId: "Ann",
 		createdAt: "2023/04/08 08:08",
-		price: 520,
+		price: 628,
 		// products: [product[0]],
-        products: [],
+        products: "上衣x2 褲子x1 鞋子x1",
 	},
 	{
 		orderId: "t3",
-		customerId: "c450",
+		customerId: "Tintin",
 		createdAt: "2023/04/08 14:08",
-		price: 520,
+		price: 552,
 		// products: product,
-        products: [],
+        products: "外套x1 項鍊x3",
+	},
+	{
+		orderId: "t4",
+		customerId: "John",
+		createdAt: "2023/04/09 09:09",
+		price: 650,
+		products: "毛衣x2 運動褲x1"
+	},
+	{
+		orderId: "t5",
+		customerId: "Alice",
+		createdAt: "2023/04/09 12:30",
+		price: 720,
+		products: "上衣x3 裙子x2 鞋子x2"
+	},
+	{
+		orderId: "t6",
+		customerId: "Bob",
+		createdAt: "2023/04/09 16:45",
+		price: 480,
+		products: "運動裝x1"
+	},
+	{
+		"orderId": "t7",
+		"customerId": "Eva",
+		"createdAt": "2023/04/09 20:15",
+		"price": 550,
+		"products": "外套x2 毛衣x1 裙子x1"
+	},
+	{
+		"orderId": "t8",
+		"customerId": "Alice",
+		"createdAt": "2023/04/09 23:55",
+		"price": 1410,
+		"products": "休閒鞋x2"
+	},
+	{
+		"orderId": "t9",
+		"customerId": "Carson",
+		"createdAt": "2023/04/10 11:20",
+		"price": 620,
+		"products": "睡衣x2"
 	}
 ]
 
