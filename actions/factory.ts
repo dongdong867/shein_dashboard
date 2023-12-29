@@ -22,10 +22,7 @@ export const getFactory = cache(async (): Promise<Factory[]> => {
 				address: data.address,
 				ability: data.ability,
 				status: data.status,
-                schedule: data.schedule.map((schedule: any) => ({
-					orderId: schedule.orderId,
-					index: schedule.index,
-				})),
+				schedule: data.schedule
 			})
 		)
 	})

@@ -42,7 +42,7 @@ const Navbar = () => {
 				</Link>
 
 				{/* Link to Output Management System */}
-				<Link href={"/"}>
+				<Link href={"/production"}>
 					<Button variant={"ghost"} asChild className="h-max flex justify-between rounded-2xl">
 						<div>
 							<div className="w-full flex justify-between place-items-center space-x-3 max-lg:hidden">
