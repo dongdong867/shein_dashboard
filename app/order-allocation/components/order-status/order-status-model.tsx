@@ -1,5 +1,5 @@
 import React from "react";
-import OrderButton from "../order-button";
+import OrderButton from "../../order-button";
 
 type Props = {
   percentage: number;
@@ -35,7 +35,7 @@ export const OrderStatusModel = ({ percentage, name }: Props) => {
       </div>
       <div>{name}</div>
       <div>{percentage}%</div>
-      <OrderButton />
+      {/* <OrderButton /> */}
     </div>
   );
 };

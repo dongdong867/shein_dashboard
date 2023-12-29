@@ -1,2 +1,2 @@
-export * from "./components/order-status";
-export * from "./components/order-status-model";
+export * from "./components/order-status/order-status";
+export * from "./components/order-status/order-status-model";

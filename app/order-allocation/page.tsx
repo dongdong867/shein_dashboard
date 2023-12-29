@@ -1,5 +1,6 @@
 import { getFactory } from "@/actions/factory";
-import { OrderStatus } from "./components/order-status";
+import { OrderStatus } from "./components/order-status/order-status";
+import { OrderPending } from "./components/order-status/order-pending";
 import { getFactoryOrders } from "@/actions/factory-order";
 
 const SupplyOrderAllocationPage = async () => {
@@ -13,6 +14,7 @@ const SupplyOrderAllocationPage = async () => {
         <div className="text-4xl">訂單分配及管理系統</div>
       </div>
       <OrderStatus factories={factories} orders={orders} />
+      <OrderPending></OrderPending>
     </div>
   );
 };
