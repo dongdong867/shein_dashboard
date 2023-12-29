@@ -61,7 +61,7 @@ return (
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="period" />
+      <XAxis dataKey="period" tick={{ fontSize: 12 }}/>
       <YAxis domain={['auto', 'auto']} />
       <Tooltip />
       <Legend />
@@ -86,12 +86,12 @@ return (
       margin={{
         top: 40,
         right: 10,
-        left: 10,
+        left: 50,
         bottom: 40,
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="period" />
+      <XAxis dataKey="period" tick={{ fontSize: 12 }}/>
       <YAxis domain={['auto', 'auto']} />
       <Tooltip />
       <Legend />
