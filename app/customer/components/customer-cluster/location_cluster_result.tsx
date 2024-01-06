@@ -1,5 +1,4 @@
 import { BarDatum, ResponsiveBar } from "@nivo/bar"
-import LocationClusterModel from "./location_cluster_model"
 
 //fake data
 const femaleClotheData: BarDatum[] = [
