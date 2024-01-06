@@ -39,7 +39,7 @@ export const TotalSalesChart = () => {
       data={salesData}
       yScale={{type: "linear", min: 85000}}
       colors={{ scheme: "category10" }}
-			margin={{ top: 40, right: 30, bottom: 30, left: 50 }}
+			margin={{ top: 20, right: 30, bottom: 30, left: 50 }}
 			useMesh={true}
 			motionConfig={"gentle"}
       pointSize={8}
@@ -53,7 +53,7 @@ export const TotalIncomeChart = () => {
       data={incomeData}
       yScale={{type: "linear", min: 130000000}}
       colors={{ scheme: "category10" }}
-			margin={{ top: 40, right: 30, bottom: 30, left: 80 }}
+			margin={{ top: 20, right: 30, bottom: 30, left: 80 }}
 			useMesh={true}
 			motionConfig={"gentle"}
       pointSize={8}
