@@ -23,16 +23,14 @@ const SortButton = ({
 	children: React.ReactNode
 }) => {
 	return (
-		<div className="flex justify-center">
-			<Button
-				variant={"ghost"}
-				onClick={() => sortHandler(column.getIsSorted(), column)}
-				className="text-center hover:text-primary hover:bg-primary/10"
-			>
-				{children}
-				{getSortingArrowIcon(column.getIsSorted())}
-			</Button>
-		</div>
+		<Button
+			variant={"ghost"}
+			onClick={() => sortHandler(column.getIsSorted(), column)}
+			className="text-center hover:text-primary hover:bg-primary/10"
+		>
+			{children}
+			{getSortingArrowIcon(column.getIsSorted())}
+		</Button>
 	)
 }
 
@@ -50,30 +48,34 @@ export const columns: ColumnDef<CustomerOrder>[] = [
 	{
 		accessorKey: "createdAt",
 		header: ({ column }) => (
-			<SortButton column={column}>
-				<span className="pr-2">下單時間</span>
-			</SortButton>
+			<div className="flex justify-center">
+				<SortButton column={column}>
+					<span className="pr-2">下單時間</span>
+				</SortButton>
+			</div>
 		),
-		cell: ({ row }) => (
-			<div className="lowercase text-center">{row.getValue("createdAt")}</div>
-		)
+		cell: ({ row }) => <div className="lowercase text-center">{row.getValue("createdAt")}</div>
 	},
 	{
 		accessorKey: "price",
 		header: ({ column }) => (
-			<SortButton column={column}>
-				<span className="pr-2">訂單金額</span>
-			</SortButton>
+			<div className="flex justify-center">
+				<SortButton column={column}>
+					<span className="pr-2">訂單金額</span>
+				</SortButton>
+			</div>
 		),
 		cell: ({ row }) => <div className="lowercase text-center">{row.getValue("price")}</div>
 	},
 	{
 		accessorKey: "products",
 		header: ({ column }) => (
-			<SortButton column={column}>
-				<span className="pr-2">購買產品</span>
-			</SortButton>
+			<div className="flex justify-end">
+				<SortButton column={column}>
+					<span className="pr-2">購買產品</span>
+				</SortButton>
+			</div>
 		),
-		cell: ({ row }) => <div className="lowercase text-center">{row.getValue("products")}</div>
+		cell: ({ row }) => <div className="lowercase text-right">{row.getValue("products")}</div>
 	}
 ]
