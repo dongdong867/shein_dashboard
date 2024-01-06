@@ -1,5 +1,5 @@
 // ProductionPage.jsx
-import Chart from "./components/production/production-analysis"
+import { TotalIncomeChart, TotalSalesChart } from "./components/production/production-analysis"
 import TrendChart from "./components/marketTrends/market-trends"
 import GrowthChart from "./components/production/production-growth"
 
@@ -11,17 +11,27 @@ const ProductionPage = () => {
 				<div className="text-4xl">生產量管理系統</div>
 			</div>
 
-			<div className="relative w-full h-max bg-white/80 p-7 rounded-[16px] z-20">
+			<div className="relative w-full h-max bg-white/80 p-7 rounded-[32px] z-20">
 				<div className="text-3xl font-bold text-center">Market Trends</div>
-				<div className="h-[600px]">
-				<TrendChart />
+				<div className="h-[500px]">
+					<TrendChart />
 				</div>
 			</div>
 
-			{/* Chart 的容器 */}
-			<div className="relative bg-white/80 p-4 rounded-[16px] overflow-auto z-10">
-				{/* Chart 元件 */}
-				<Chart />
+			<div className="w-full flex space-x-8">
+				<div className="w-full h-max bg-white/80 rounded-[32px] p-7">
+					<div className="text-2xl font-bold">Total Sales</div>
+					<div className="h-[300px]">
+						<TotalSalesChart />
+					</div>
+				</div>
+
+				<div className="w-full h-max bg-white/80 rounded-[32px] p-7">
+					<div className="text-2xl font-bold">Total Income</div>
+					<div className="w-full h-[300px]">
+						<TotalIncomeChart />
+					</div>
+				</div>
 			</div>
 
 			{/* GrowthChart 的容器 */}
