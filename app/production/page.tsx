@@ -11,10 +11,11 @@ const ProductionPage = () => {
 				<div className="text-4xl">生產量管理系統</div>
 			</div>
 
-			{/* TrendChart 的容器 */}
-			<div className="relative bg-white/80 p-4 rounded-[16px] overflow-auto z-20">
-				{/* TrendChart 元件 */}
+			<div className="relative w-full h-max bg-white/80 p-7 rounded-[16px] z-20">
+				<div className="text-3xl font-bold text-center">Market Trends</div>
+				<div className="h-[600px]">
 				<TrendChart />
+				</div>
 			</div>
 
 			{/* Chart 的容器 */}
