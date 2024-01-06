@@ -86,8 +86,12 @@ const TrendChart = () => {
   return (
     <ResponsiveLine
       data={data}
+      yScale={{
+        type: "linear",
+        min: 7000
+      }}
       colors={{ scheme: "category10" }}
-      margin={{ top: 40, right: 110, bottom: 50, left: 60 }}
+      margin={{ top: 40, right: 110, bottom: 30, left: 60 }}
       useMesh
       motionConfig={"gentle"}
       pointSize={8}
