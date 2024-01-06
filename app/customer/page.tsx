@@ -1,7 +1,3 @@
-// import { ProductStock } from "./components/product-stock"
-// import { StockStatus } from "./components/stock-status"
-
-
 import { getStockStatus } from "@/actions/stock-status"
 import { CustomerCluster } from "./components/customer-cluster/customer_cluster"
 import { CustomerOrder } from "./components/customer-order/customer_order"
