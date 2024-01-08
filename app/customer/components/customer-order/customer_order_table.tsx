@@ -23,6 +23,7 @@ import {
 import { SetStateAction, useState } from "react"
 // util
 import { Button } from "@/components/ui/button"
+import { CustomerOrderT } from "@/types/customer-order"
 import { columns } from "./columns"
 
 // TODO: REPLACE FAKE DATA
@@ -43,7 +44,7 @@ const product: ProductInCustomerOrder[] = [
         amount: 1,
     },
 ]
-const data: CustomerOrder[] = [
+const dataT: CustomerOrder[] = [
 	{
 		orderId: "t1",
 		customerId: "Tintin",
@@ -112,7 +113,11 @@ const data: CustomerOrder[] = [
 	}
 ]
 
-export const CustomerOrderTable = () => {
+export const CustomerOrderTable = ({
+	data
+}: {
+	data: CustomerOrderT[]
+}) => {
 	const [sorting, setSorting] = useState<SortingState>([])
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
     const [filterField, setFilterField] = useState("orderId")
@@ -122,7 +127,8 @@ export const CustomerOrderTable = () => {
     };
 
 	const table = useReactTable({
-		data,
+		// data: data.customerOrders,
+		data: data,
 		columns,
 		onSortingChange: setSorting,
 		onColumnFiltersChange: setColumnFilters,
@@ -166,8 +172,8 @@ export const CustomerOrderTable = () => {
                 >
                     <option value="orderId">訂單編號</option>
                     <option value="customerId">顧客編號</option>
-                    <option value="createdAt">下單時間</option>
-                    <option value="product">購買產品</option>
+                    <option value="createAt">下單時間</option>
+                    <option value="products">購買產品</option>
                 </select>
                 <div style={{ width: "15px" }}></div>
                 <Input
@@ -200,7 +206,16 @@ export const CustomerOrderTable = () => {
 								<TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
 									{row.getVisibleCells().map((cell) => (
 										<TableCell key={cell.id}>
-											{flexRender(cell.column.columnDef.cell, cell.getContext())}
+											{cell.column.id === 'products' ? (
+												// Iterate over products and render each one separately
+												row.original.products.map((product, index) => (
+													<div key={index}>
+														{`產品編號: ${product.id}, 購買數量: ${product.amount}, 產品單價: ${product.price}`}
+													</div>
+												))
+											) : (
+												flexRender(cell.column.columnDef.cell, cell.getContext())
+											)}
 										</TableCell>
 									))}
 								</TableRow>

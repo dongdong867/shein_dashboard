@@ -1,9 +1,9 @@
-// import { ProductStockSearch } from "./product-stock-search"
-// import { ProductStockTable } from "./product-stock-table"
-
+import { getCustomerOrders } from "@/actions/customer-order"
 import { CustomerOrderTable } from "./customer_order_table"
 
-export const CustomerOrder = ({time}: any & String) => {
+export const CustomerOrder = async ({time}: any & String) => {
+	const customerOrders = await getCustomerOrders()
+
 	return (
 		<div className="w-full h-max flex flex-col justify-start place-items-start rounded-[32px] bg-base/90 overflow-hidden">
 			<div className="w-full flex justify-between place-items-center px-7 pt-7">
@@ -13,7 +13,7 @@ export const CustomerOrder = ({time}: any & String) => {
 				</div>
 			</div>
 			<div className="w-full h-full p-7">
-				<CustomerOrderTable />
+				<CustomerOrderTable data={customerOrders} />
 			</div>
 		</div>
 	)
