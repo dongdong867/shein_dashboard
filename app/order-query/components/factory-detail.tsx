@@ -2,7 +2,7 @@
 import { FactoryOrder } from "@/types/factory-order"
 import { Factory } from "@/types/factory"
 // utils
-import React from "react"
+import { cn } from "@/lib/utils"
 // icons
 import { FaPhone, FaMapMarkerAlt, FaIdCard, FaClipboardList, FaCog, FaTruck } from "react-icons/fa"
 // components
@@ -15,14 +15,30 @@ type FactoryDetailProps = {
 	orders: FactoryOrder[]
 }
 
-const StatusIcons = ({ status, percentage }: { status: "inline" | "processing" | "shipping", percentage: number }) => {
+const StatusIcons = ({
+	status,
+	percentage
+}: {
+	status: "inline" | "processing" | "shipping"
+	percentage: number
+}) => {
 	return (
-		<div className="w-full flex justify-between place-items-center p-2">
-			<FaClipboardList className={status == "inline" ? "text-blue-700/80" : "text-base-100/60"} />
-			<Separator className="w-5/12 h-0.5" />
-			<FaCog className={status == "processing" ? "text-blue-700/80" : "text-base-100/60"} />
-			{status == "processing" && <div className="text-blue-700/80">({percentage}%)</div>}
-			<Separator className="w-5/12 h-0.5" />
+		<div className="w-full h-max flex justify-between place-items-center p-2">
+			<FaClipboardList
+				size={16}
+				className={status == "inline" ? "text-blue-700/80" : "text-base-100/60"}
+			/>
+			<Separator className="w-1/3 h-0.5" />
+			<div
+				className={cn(
+					status == "processing" ? "text-blue-700/80" : "text-base-100/60",
+					"flex place-items-center space-x-1"
+				)}
+			>
+				<FaCog />
+				{status == "processing" && <div>({percentage}%)</div>}
+			</div>
+			<Separator className="w-1/3 h-0.5" />
 			<FaTruck className={status == "shipping" ? "text-blue-700/80" : "text-base-100/60"} />
 		</div>
 	)
@@ -30,7 +46,6 @@ const StatusIcons = ({ status, percentage }: { status: "inline" | "processing" |
 
 export const FactoryDetail = ({ factory, orders }: FactoryDetailProps) => {
 	const statusClassName = factory.status === "working" ? "bg-blue-400" : "bg-gray-400"
-	
 
 	const FactoryOrderStatus = () => {
 		return (
@@ -53,7 +68,7 @@ export const FactoryDetail = ({ factory, orders }: FactoryDetailProps) => {
 	}
 
 	return (
-		<div className="w-full h-full p-5 space-y-1 bg-white rounded-3xl">
+		<div className="w-full min-w-[340px] h-full p-5 space-y-1 bg-white rounded-3xl">
 			<div className="flex justify-between items-center">
 				<div className="text-xl font-bold">{factory.name}</div>
 				<Badge variant={"outline"} className={`${statusClassName} text-white text-sm py-1`}>
