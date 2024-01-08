@@ -1,8 +1,8 @@
+// components
 import { OrderStatusModel } from "./order-status-model";
-import OrderStatusReloadButton from "../../reload-button";
+// types
 import { Factory } from "@/types/factory";
 import { FactoryOrder } from "@/types/factory-order";
-import React from "react";
 
 type FactoryNameProps = {
   factories: Factory[];
@@ -25,12 +25,11 @@ export const OrderStatus = ({ factories, orders }: FactoryNameProps) => {
           <div className="text-2xl">即時工廠忙碌程度概況</div>
           <div className="text-sm">資料時間: {new Date().toLocaleString()}</div>
         </div>
-        <OrderStatusReloadButton />
       </div>
       <div className="w-full h-full flex justify-start place-items-center space-x-10 overflow-y-scroll pl-7">
-        {factories.map((factory, index) => (
+        {factories.map((factory) => (
           <OrderStatusModel
-            key={index}
+            key={factory.id}
             percentage={calculatePercentage(factory.id)}
             name={factory.name}
           />
