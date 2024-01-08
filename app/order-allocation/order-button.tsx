@@ -1,18 +1,21 @@
-// 'order-button.tsx'
-import React from "react";
+"use client"
+
+import { Button } from "@/components/ui/button";
+
 
 type Props = {
   onClick?: () => void;
 };
 
-const OrderButton: React.FC<Props> = ({ onClick }) => {
+const OrderButton = ({ onClick }: Props) => {
   return (
-    <button
+    <Button
+      variant={"outline"}
       onClick={onClick}
-      className="mt-1 px-2 py-1 bg-gray-200 text-black rounded transition-all hover:bg-gray-600 hover:text-white"
+      className="mt-1 px-2 py-1 rounded transition-all"
     >
       分配訂單
-    </button>
+    </Button>
   );
 };
 
