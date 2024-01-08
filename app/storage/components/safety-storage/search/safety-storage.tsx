@@ -12,11 +12,10 @@ export const SafetyStorage = ({ data }: { data: SafetyStorageType[] }) => {
 
 	const getLastSafetyStorage = (pastSafetyStorage: { month: string; value: number }[]) => {
 		const date = new Date()
-		const month = date.getMonth() == 1 ? 12 : date.getMonth() - 1
+		const month = date.getMonth() == 0 ? 12 : date.getMonth()
 		const year = month == 12 ? date.getFullYear() - 1 : date.getFullYear()
 
-		return pastSafetyStorage.filter((safetyStorage) => safetyStorage.month == year + "/" + month)[0]
-			.value
+		return pastSafetyStorage.filter((safetyStorage) => safetyStorage.month == year + "/" + month)[0].value
 	}
 
 	const getSafetyStoragePercentage = (
