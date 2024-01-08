@@ -1,5 +1,5 @@
 import { OrderStatusModel } from "./order-status-model";
-import OrderStatusReloadButton from "../reload-button";
+import OrderStatusReloadButton from "../../reload-button";
 import { Factory } from "@/types/factory";
 import { FactoryOrder } from "@/types/factory-order";
 import React from "react";
@@ -39,3 +39,5 @@ export const OrderStatus = ({ factories, orders }: FactoryNameProps) => {
     </div>
   );
 };
+
+
