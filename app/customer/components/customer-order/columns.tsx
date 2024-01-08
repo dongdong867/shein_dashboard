@@ -3,13 +3,14 @@ import { Column, ColumnDef, SortDirection } from "@tanstack/react-table"
 // components
 import { Button } from "@/components/ui/button"
 // icons
+import { CustomerOrderT } from "@/types/customer-order"
 import { LuArrowDown01, LuArrowDown10, LuArrowDownUp } from "react-icons/lu"
 
 const getSortingArrowIcon = (isSorted: false | SortDirection) => {
 	return isSorted ? isSorted == "asc" ? <LuArrowDown01 /> : <LuArrowDown10 /> : <LuArrowDownUp />
 }
 
-const sortHandler = (isSorted: false | SortDirection, column: Column<CustomerOrder, unknown>) => {
+const sortHandler = (isSorted: false | SortDirection, column: Column<CustomerOrderT, unknown>) => {
 	if (!isSorted) column.toggleSorting(false)
 	else if (isSorted == "asc") column.toggleSorting(true)
 	else column.clearSorting()
@@ -19,7 +20,7 @@ const SortButton = ({
 	column,
 	children
 }: {
-	column: Column<CustomerOrder, unknown>
+	column: Column<CustomerOrderT, unknown>
 	children: React.ReactNode
 }) => {
 	return (
@@ -34,7 +35,7 @@ const SortButton = ({
 	)
 }
 
-export const columns: ColumnDef<CustomerOrder>[] = [
+export const columns: ColumnDef<CustomerOrderT>[] = [
 	{
 		accessorKey: "orderId",
 		header: "訂單編號",
@@ -46,7 +47,7 @@ export const columns: ColumnDef<CustomerOrder>[] = [
 		cell: ({ row }) => <div className="lowercase">{row.getValue("customerId")}</div>
 	},
 	{
-		accessorKey: "createdAt",
+		accessorKey: "createAt",
 		header: ({ column }) => (
 			<div className="flex justify-center">
 				<SortButton column={column}>
@@ -54,10 +55,10 @@ export const columns: ColumnDef<CustomerOrder>[] = [
 				</SortButton>
 			</div>
 		),
-		cell: ({ row }) => <div className="lowercase text-center">{row.getValue("createdAt")}</div>
+		cell: ({ row }) => <div className="lowercase text-center">{row.getValue("createAt")}</div>
 	},
 	{
-		accessorKey: "price",
+		accessorKey: "totalPrice",
 		header: ({ column }) => (
 			<div className="flex justify-center">
 				<SortButton column={column}>
@@ -65,7 +66,7 @@ export const columns: ColumnDef<CustomerOrder>[] = [
 				</SortButton>
 			</div>
 		),
-		cell: ({ row }) => <div className="lowercase text-center">{row.getValue("price")}</div>
+		cell: ({ row }) => <div className="lowercase text-center">{row.getValue("totalPrice")}</div>
 	},
 	{
 		accessorKey: "products",
