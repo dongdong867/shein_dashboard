@@ -14,7 +14,7 @@ const SupplyOrderAllocationPage = async () => {
         <div className="text-4xl">訂單分配及管理系統</div>
       </div>
       <OrderStatus factories={factories} orders={orders} />
-      <OrderPending></OrderPending>
+      <OrderPending factories={factories} orders={orders} />
     </div>
   );
 };
