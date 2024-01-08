@@ -5,6 +5,7 @@ import { Factory } from "@/types/factory"
 import React from "react"
 // icons
 import { FaPhone, FaMapMarkerAlt, FaIdCard, FaClipboardList, FaCog, FaTruck } from "react-icons/fa"
+// components
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Progress } from "@/components/ui/progress"
