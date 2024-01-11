@@ -233,13 +233,21 @@ const otherData: BarDatum[] = [
 // }
 
 
-const BarChart = ({ data }: { data: BarDatum[] }) => {
+export const BarChartLocation = ({ data }: { data: BarDatum[] }) => {
 	return (
 		<ResponsiveBar
 			data={data}
 			keys={["北部", "中部", "南部", "東部"]}
 			indexBy={"name"}
-			colors={{ scheme: "nivo" }}
+			// colors={{ scheme: "nivo" }}
+			colors={({ id }) => {
+				if (id === "北部") return "#3e76a8";
+				if (id === "中部") return "#accbe1";
+				if (id === "南部") return "#d4e9f5";
+				if (id === "東部") return "#5a9fd4";
+				// 如果有其他 id 不在 keys 中
+				return "#999999";
+			}}
 			margin={{ top: 10, right: 100, bottom: 30, left: 40 }}
 			padding={0.3}
 			legends={[
@@ -262,9 +270,9 @@ const BarChart = ({ data }: { data: BarDatum[] }) => {
 	)
 }
 
-export const FemaleClotheLocationAnalysis = () => <BarChart data={femaleClotheData} />
-export const MaleClotheLocationAnalysis = () => <BarChart data={maleClotheData} />
-export const ShoesLocationAnalysis = () => <BarChart data={shoesData} />
-export const AccessoriesLocationAnalysis = () => <BarChart data={accessoriesData} />
-export const MakeupLocationAnalysis = () => <BarChart data={makeupData} />
-export const OtherLocationAnalysis = () => <BarChart data={otherData} />
+// export const FemaleClotheLocationAnalysis = () => <BarChart data={femaleClotheData} />
+// export const MaleClotheLocationAnalysis = () => <BarChart data={maleClotheData} />
+// export const ShoesLocationAnalysis = () => <BarChart data={shoesData} />
+// export const AccessoriesLocationAnalysis = () => <BarChart data={accessoriesData} />
+// export const MakeupLocationAnalysis = () => <BarChart data={makeupData} />
+// export const OtherLocationAnalysis = () => <BarChart data={otherData} />

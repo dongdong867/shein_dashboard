@@ -1,4 +1,4 @@
-import { ResponsiveBar, BarDatum } from "@nivo/bar"
+import { BarDatum, ResponsiveBar } from "@nivo/bar";
 
 const data: BarDatum[] = [
 	{
@@ -49,7 +49,13 @@ export const Rfm = () => {
 			data={data}
 			keys={["顧客數", "平均消費金額"]}
 			indexBy={"label"}
-			colors={{ scheme: "nivo" }}
+			// colors={{ scheme: "nivo" }}
+      colors={({ id }) => {
+				if (id === "顧客數") return "#3e76a8";
+				if (id === "平均消費金額") return "#accbe1";
+				// 如果有其他 id 不在 keys 中
+				return "#999999";
+			}}
 			margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
 			padding={0.3}
 			groupMode={"grouped"}
