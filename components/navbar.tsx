@@ -1,15 +1,15 @@
 // components
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "./ui/button"
-import { MdFactory } from "react-icons/md"
-import { IoIosArrowForward } from "react-icons/io"
 import { FaBox, FaChartArea, FaClipboardList } from "react-icons/fa"
+import { IoIosArrowForward } from "react-icons/io"
+import { MdFactory } from "react-icons/md"
+import { Button } from "./ui/button"
 import {
 	DropdownMenu,
-	DropdownMenuTrigger,
 	DropdownMenuContent,
-	DropdownMenuItem
+	DropdownMenuItem,
+	DropdownMenuTrigger
 } from "./ui/dropdown-menu"
 
 // images
@@ -47,7 +47,7 @@ const Navbar = () => {
 						<div>
 							<div className="w-full flex justify-between place-items-center space-x-3 max-lg:hidden">
 								<FaChartArea size={20} />
-								<div className="text-lg xl:text-xl">生產量管理</div>
+								<div className="text-lg xl:text-xl">銷售分析系統</div>
 							</div>
 							<div className="lg:hidden">
 								<FaChartArea size={30} />
