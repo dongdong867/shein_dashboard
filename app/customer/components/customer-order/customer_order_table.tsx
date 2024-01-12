@@ -140,8 +140,12 @@ export const CustomerOrderTable = ({
 											{cell.column.id === 'products' ? (
 												// Iterate over products and render each one separately
 												row.original.products.map((product, index) => (
-													<div key={index}>
-														{`產品編號: ${product.id}, 購買數量: ${product.amount}, 產品單價: ${product.price}`}
+													<div key={product.id} className="pb-2">
+														<div>產品編號: {product.id},</div>
+														<div className="flex space-x-2">
+															<div>購買數量: {product.amount},</div>
+															<div>產品單價: {product.price}</div>
+														</div>
 													</div>
 												))
 											) : (
