@@ -34,75 +34,6 @@ import {
 import { CustomerOrderT } from "@/types/customer-order"
 import { columns } from "./columns"
 
-// TODO: REPLACE FAKE DATA
-const dataT: CustomerOrder[] = [
-	{
-		orderId: "t1",
-		customerId: "Tintin",
-		createdAt: "2023/04/08 04:08",
-		price: 524,
-		// products: [product[0],product[2]],
-		products: "毛衣x2 運動褲x1 項鍊x5"
-	},
-	{
-		orderId: "t2",
-		customerId: "Ann",
-		createdAt: "2023/04/08 08:08",
-		price: 628,
-		// products: [product[0]],
-		products: "上衣x2 褲子x1 鞋子x1"
-	},
-	{
-		orderId: "t3",
-		customerId: "Tintin",
-		createdAt: "2023/04/08 14:08",
-		price: 552,
-		// products: product,
-		products: "外套x1 項鍊x3"
-	},
-	{
-		orderId: "t4",
-		customerId: "John",
-		createdAt: "2023/04/09 09:09",
-		price: 650,
-		products: "毛衣x2 運動褲x1"
-	},
-	{
-		orderId: "t5",
-		customerId: "Alice",
-		createdAt: "2023/04/09 12:30",
-		price: 720,
-		products: "上衣x3 裙子x2 鞋子x2"
-	},
-	{
-		orderId: "t6",
-		customerId: "Bob",
-		createdAt: "2023/04/09 16:45",
-		price: 480,
-		products: "運動裝x1"
-	},
-	{
-		orderId: "t7",
-		customerId: "Eva",
-		createdAt: "2023/04/09 20:15",
-		price: 550,
-		products: "外套x2 毛衣x1 裙子x1"
-	},
-	{
-		orderId: "t8",
-		customerId: "Alice",
-		createdAt: "2023/04/09 23:55",
-		price: 1410,
-		products: "休閒鞋x2"
-	},
-	{
-		orderId: "t9",
-		customerId: "Carson",
-		createdAt: "2023/04/10 11:20",
-		price: 620,
-		products: "睡衣x2"
-	}
-]
 
 const PaginationButton = ({ table }: { table: TanstackTable<CustomerOrderT> }) => {
 	return (
@@ -209,8 +140,12 @@ export const CustomerOrderTable = ({
 											{cell.column.id === 'products' ? (
 												// Iterate over products and render each one separately
 												row.original.products.map((product, index) => (
-													<div key={index}>
-														{`產品編號: ${product.id}, 購買數量: ${product.amount}, 產品單價: ${product.price}`}
+													<div key={product.id} className="pb-2">
+														<div>產品編號: {product.id},</div>
+														<div className="flex space-x-2">
+															<div>購買數量: {product.amount},</div>
+															<div>產品單價: {product.price}</div>
+														</div>
 													</div>
 												))
 											) : (

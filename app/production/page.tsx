@@ -1,6 +1,6 @@
 // ProductionPage.jsx
-import { TotalIncomeChart, TotalSalesChart } from "./components/production/production-analysis"
 import TrendChart from "./components/marketTrends/market-trends"
+import { TotalIncomeChart, TotalSalesChart } from "./components/production/production-analysis"
 import GrowthChart from "./components/production/production-growth"
 
 const ProductionPage = () => {
@@ -8,7 +8,7 @@ const ProductionPage = () => {
 		<div className="w-full h-full p-10 space-y-8 flex flex-col justify-start bg-neutral-500/90 rounded-[32px] overflow-auto  mt-100">
 			<div className="text-primary-foreground font-bold space-y-2">
 				<div className="text-sm">SHEIN 數位轉型計畫</div>
-				<div className="text-4xl">生產量管理系統</div>
+				<div className="text-4xl">銷售分析系統</div>
 			</div>
 
 			<div className="relative w-full h-max bg-base/90 p-7 rounded-[32px] z-20">
