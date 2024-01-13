@@ -2,9 +2,8 @@
 
 import { adminFirestore } from "@/lib/firestore"
 import { SafetyStorage } from "@/types/safety-storage"
-import { cache } from "react"
 
-export const getSafetyStorage = cache(async (): Promise<SafetyStorage[]> => {
+export const getSafetyStorage = async (): Promise<SafetyStorage[]> => {
 	const docs = await adminFirestore.collection("safetyStorage").get()
 
   if (docs.size == 0) throw new Error("error occurred when fetching safety storage")
@@ -25,4 +24,4 @@ export const getSafetyStorage = cache(async (): Promise<SafetyStorage[]> => {
 
 
   return safetyStorage
-})
+}

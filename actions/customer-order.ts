@@ -3,12 +3,11 @@
 // utils
 import { adminFirestore } from "@/lib/firestore";
 import { format } from 'date-fns';
-import { cache } from "react";
 
 // type
 import { CustomerOrderT } from "@/types/customer-order";
 
-export const getCustomerOrders = cache(async (): Promise<CustomerOrderT[]> => {
+export const getCustomerOrders = async (): Promise<CustomerOrderT[]> => {
 	const docs = await adminFirestore.collection("customerOrder").get()
 
 	if (docs.size < 0) throw new Error("error on fetching factory orders.")
@@ -28,4 +27,4 @@ export const getCustomerOrders = cache(async (): Promise<CustomerOrderT[]> => {
 	})
 
 	return customerOrders
-})
+}

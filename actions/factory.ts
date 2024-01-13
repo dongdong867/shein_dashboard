@@ -1,12 +1,11 @@
 "use server"
 
 // utils
-import { cache } from "react"
 import { adminFirestore } from "@/lib/firestore"
 // type
 import { Factory } from "@/types/factory"
 
-export const getFactory = cache(async (): Promise<Factory[]> => {
+export const getFactory = async (): Promise<Factory[]> => {
 	const docs = await adminFirestore.collection("factory").get()
 
 	if (docs.size < 0) throw new Error("error on fetching factory.")
@@ -28,4 +27,4 @@ export const getFactory = cache(async (): Promise<Factory[]> => {
 	})
 
 	return factory
-})
+}
