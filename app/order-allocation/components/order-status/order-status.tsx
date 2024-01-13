@@ -38,5 +38,3 @@ export const OrderStatus = ({ factories, orders }: FactoryNameProps) => {
     </div>
   );
 };
-
-

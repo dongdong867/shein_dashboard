@@ -1,1 +1,1 @@
-export * from "./safety-storage-analysis"
+export * from "./safety-storage-analysis";
