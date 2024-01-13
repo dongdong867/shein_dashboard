@@ -1,5 +1,3 @@
-"use server";
-
 import { adminFirestore } from "@/lib/firestore";
 import { SafetyStorage } from "@/types/safety-storage";
 

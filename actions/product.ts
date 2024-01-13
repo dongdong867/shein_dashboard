@@ -1,5 +1,3 @@
-"use server";
-
 // utils
 import { adminFirestore } from "@/lib/firestore";
 import { cache } from "react";
