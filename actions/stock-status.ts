@@ -5,6 +5,7 @@ import { adminFirestore } from "@/lib/firestore";
 // types
 import { StockStatus } from "@/types/stock-status";
 
+export const revalidate = 60
 export const getStockStatus = async (): Promise<{
   stockStatus: StockStatus[];
   updateAt: string;

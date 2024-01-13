@@ -7,6 +7,7 @@ import { cache } from "react";
 // type
 import { Product } from "@/types/product";
 
+export const revalidate = 60
 export const getProducts = cache(async (): Promise<Product[]> => {
   const docs = await adminFirestore.collection("product").get();
 

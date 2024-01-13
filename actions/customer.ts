@@ -7,6 +7,7 @@ import { cache } from "react";
 // type
 import { Customer } from "@/types/customer";
 
+export const revalidate = 60
 export const getCustomers = cache(async (): Promise<Customer[]> => {
   const docs = await adminFirestore.collection("customer").get();
 

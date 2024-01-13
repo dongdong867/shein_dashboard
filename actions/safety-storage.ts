@@ -3,6 +3,7 @@
 import { adminFirestore } from "@/lib/firestore";
 import { SafetyStorage } from "@/types/safety-storage";
 
+export const revalidate = 60
 export const getSafetyStorage = async (): Promise<SafetyStorage[]> => {
   const docs = await adminFirestore.collection("safetyStorage").get();
 

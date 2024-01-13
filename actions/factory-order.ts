@@ -5,6 +5,7 @@ import { adminFirestore } from "@/lib/firestore";
 // type
 import { FactoryOrder } from "@/types/factory-order";
 
+export const revalidate = 60
 export const getFactoryOrders = async (): Promise<FactoryOrder[]> => {
   const docs = await adminFirestore.collection("factoryOrder").get();
 

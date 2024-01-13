@@ -5,6 +5,7 @@ import { adminFirestore } from "@/lib/firestore";
 // type
 import { Factory } from "@/types/factory";
 
+export const revalidate = 60
 export const getFactory = async (): Promise<Factory[]> => {
   const docs = await adminFirestore.collection("factory").get();
 
