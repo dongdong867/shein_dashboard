@@ -1,10 +1,9 @@
-"use server";
-
 // utils
 import { adminFirestore } from "@/lib/firestore";
 // types
 import { StockStatus } from "@/types/stock-status";
 
+const revalidate = 60
 export const getStockStatus = async (): Promise<{
   stockStatus: StockStatus[];
   updateAt: string;

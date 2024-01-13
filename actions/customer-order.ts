@@ -1,5 +1,3 @@
-"use server";
-
 // utils
 import { adminFirestore } from "@/lib/firestore";
 import { format } from "date-fns";
@@ -7,6 +5,7 @@ import { format } from "date-fns";
 // type
 import { CustomerOrderT } from "@/types/customer-order";
 
+export const revalidate = 60
 export const getCustomerOrders = async (): Promise<CustomerOrderT[]> => {
   const docs = await adminFirestore.collection("customerOrder").get();
 

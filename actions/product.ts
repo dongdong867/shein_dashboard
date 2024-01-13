@@ -1,5 +1,3 @@
-"use server";
-
 // utils
 import { adminFirestore } from "@/lib/firestore";
 import { cache } from "react";
@@ -7,6 +5,7 @@ import { cache } from "react";
 // type
 import { Product } from "@/types/product";
 
+export const revalidate = 60
 export const getProducts = cache(async (): Promise<Product[]> => {
   const docs = await adminFirestore.collection("product").get();
 

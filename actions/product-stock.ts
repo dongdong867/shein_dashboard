@@ -1,10 +1,9 @@
-"use server";
-
 // utils
 import { adminFirestore } from "@/lib/firestore";
 // types
 import { ProductStock } from "@/types/product-stock";
 
+export const revalidate = 60
 export const getProductStock = async (
   productId: string
 ): Promise<{ productName: string; productStock: ProductStock[] }> => {
