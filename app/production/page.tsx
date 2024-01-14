@@ -15,7 +15,7 @@ const ProductionPage = () => {
       </div>
 
       <div className="relative w-full h-max bg-base/90 p-7 rounded-[32px] z-20">
-        <div className="text-3xl font-bold pb-4">Market Trends</div>
+        <div className="text-3xl font-bold pb-4">市場趨勢分析</div>
         <div className="h-[500px] p-4 bg-background rounded-3xl">
           <TrendChart />
         </div>
@@ -23,14 +23,14 @@ const ProductionPage = () => {
 
       <div className="w-full flex space-x-8">
         <div className="w-full h-max bg-base/90 rounded-[32px] p-7">
-          <div className="text-2xl font-bold pb-4">Total Sales</div>
+          <div className="text-2xl font-bold pb-4">總銷售數量</div>
           <div className="w-full h-[300px] p-4 bg-background rounded-3xl">
             <TotalSalesChart />
           </div>
         </div>
 
         <div className="w-full h-max bg-base/90 rounded-[32px] p-7">
-          <div className="text-2xl font-bold pb-4">Total Income</div>
+          <div className="text-2xl font-bold pb-4">營業利益</div>
           <div className="w-full h-[300px] p-4 bg-background rounded-3xl">
             <TotalIncomeChart />
           </div>
@@ -38,7 +38,7 @@ const ProductionPage = () => {
       </div>
 
       <div className="relative bg-base/90 p-7 rounded-[32px] z-10">
-        <div className="text-2xl font-bold pb-4">Growth Rate</div>
+        <div className="text-2xl font-bold pb-4">銷售成長率</div>
         <div className="w-full h-[350px] p-4 bg-background rounded-3xl">
           <GrowthChart />
         </div>
